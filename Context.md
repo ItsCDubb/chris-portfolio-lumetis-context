@@ -11701,3 +11701,343 @@ Use these values:
 Important: The callback URL is exactly `https://api.netlify.com/auth/done`. Don't use `chris.lumetis.io` as a setup URL or configure webhooks.
 
 Once you're on the OAuth App form, register it. We'll take the Client ID and Client Secret to Netlify in the next step.
+
+## Me:
+
+I’m not sure Coach & Consultant will have the effect I’m hoping for
+
+## You:
+
+I think there's a legitimate question here, and I don't want to dismiss it just because we previously settled on the wording.
+
+When we chose **Chris Warren | Technology Coach & Consultant**, the thinking was that it communicated two things:
+
+1. **Coach:** You help people understand technology, make better decisions, and become more capable of using it.
+2. **Consultant:** You don't just explain things. You can architect, develop, integrate, and implement the technology that solves their problems.
+
+That combination reflects your experience pretty well.
+
+But there's a potential problem.
+
+**People buy outcomes, not job titles.**
+
+Someone looking for help with AI implementation might search for:
+
+- AI Consultant
+- AI Solutions Architect
+- AI Implementation Specialist
+- Technology Consultant
+- AI Strategy Consultant
+
+They're less likely to search for a Technology Coach.
+
+And someone who sees _Technology Coach_ might assume you're offering basic computer instruction or IT tutoring. That's not what you bring to the table.
+
+### **Here's what I want to understand.**
+
+Is your concern primarily that:
+
+- **A. Discoverability:** People won't find you because Coach & Consultant aren't the terms they're searching for.
+- **B. Perception:** People might underestimate your engineering experience and technical capabilities.
+- **C. Conversion:** People might visit your portfolio, understand what you do, but not see a reason to hire you.
+- **D. Positioning:** You're wondering whether Coach & Consultant communicates the professional you actually are.
+
+You might have a combination of these concerns, too.
+
+I particularly want to distinguish between what you _want to be known as_ and what prospective clients need to recognize when they encounter your name.
+
+Those aren't necessarily the same thing. And getting that distinction right matters more than finding a clever title.
+
+## Me:
+
+I want to be known as a guy that can help with Technology. I know coaching & consulting will cover that base but I’m more worried about the optics and actually getting clients coming in the door pretty regularly
+
+## You:
+
+Okay, that changes how I'd approach this. And honestly, I think you're identifying a positioning problem, not a naming problem.
+
+You don't necessarily want to be known as an AI consultant, a software developer, a business coach, or an automation specialist.
+
+**You want people to think of Chris Warren when they have a technology problem.**
+
+Whether that problem involves AI, software, infrastructure, business systems, integrations, technical strategy, or simply figuring out what technology they should be using.
+
+That's a much broader professional identity.
+
+## **My concern with Coach & Consultant**
+
+I don't dislike the combination, but consider how a prospective client might interpret it.
+
+| Title                 | Potential perception                             |
+| --------------------- | ------------------------------------------------ |
+| Technology Coach      | Teaching, guidance, training                     |
+| Technology Consultant | Professional advice and solutions                |
+| Technology Partner    | Someone who helps solve ongoing technology needs |
+| Technology Strategist | Planning, architecture, direction                |
+| Technology Expert     | Broad knowledge, but unclear services            |
+
+I think **Technology Coach & Consultant** risks putting too much emphasis on coaching and not enough on your ability to actually deliver technical solutions.
+
+With 26 years of engineering experience, that's an important distinction.
+
+## **What I would consider instead**
+
+My preferred direction
+
+# **Chris Warren**
+
+# Technology Consultant
+
+_Strategy. Engineering. Implementation._
+
+Helping businesses and individuals make better technology decisions, solve complex problems, and put the right solutions to work.
+
+**Alternative: Broader positioning**
+
+# **Chris Warren**
+
+# Technology Partner
+
+_Your technology. Your goals. My expertise._
+
+A practical technology resource for businesses that need guidance, engineering, implementation, or ongoing support.
+
+### **But here's the bigger issue: getting clients regularly**
+
+Changing your title won't automatically bring clients through the door.
+
+I'd approach this as four connected systems:
+
+1. **Positioning:** People immediately understand that you're someone they can hire for technology problems.
+2. **Services:** People can identify specific problems you solve and understand what engaging you looks like.
+3. **Acquisition:** A consistent way to get in front of prospective clients, build trust, and generate inquiries.
+4. **Retention:** Work doesn't have to end with one project. You can become their ongoing technology resource.
+
+That fourth one is particularly interesting.
+
+A business might initially hire you to evaluate its AI strategy. That could lead to implementation, integrations, software improvements, and ongoing technical advisory work.
+
+One relationship can become several engagements without constantly chasing another client.
+
+### **There's one distinction I'd like to establish before we change the portfolio.**
+
+**Who do you actually want walking through your door?**
+
+- **Businesses:** Owners and organizations needing help with technology, AI, software, and systems.
+- **Individuals:** People needing technology guidance, troubleshooting, recommendations, or help making technology work for them.
+- **Both:** You want to be a general technology resource, serving businesses and individuals alike.
+
+I'm asking because this affects everything from your headline and portfolio organization to your service offerings and client acquisition strategy.
+
+I don't want us to build a portfolio that looks impressive but attracts the wrong audience. I want it to generate conversations with people who have a reason to pay for your expertise.
+
+## Me:
+
+Maybe when I start working on my website tomorrow, I make a section about what services I offer
+
+## You:
+
+I actually think that's the right next move. And I'd go a little further: **your services section might be more important to generating business than your professional title.**
+
+Your title tells people who you are. Your services tell them why they should hire you.
+
+I'd build the section around the problems you can solve rather than a list of technologies you know.
+
+## **Services I would consider**
+
+[Tech Nexus - Strategic Technology Consulting](https://images.openai.com/static-rsc-4/zUbbh2ekcw_zDxN2GrYd4i_kh9FH-VoZqgQWbRpjhjtE1eb9Z4Yfg5rKb-sOCs3cDDKYdL02tnv7fgOQ0L3KSFZ-eVt3U49ac7NWNn0_kB4_GzonG5kv2cGjCh6Y_9wopfslODlf8EJfhW5j5xnRZOhkrdYvbY-agrjr0NgdVpI?purpose=inline)
+
+**Technology Consulting & Strategy**
+
+Helping businesses make informed technology decisions, evaluate solutions, and plan their technology investments.
+
+[AI Integration for Dental Assistant Workflow Automation | Inference Systems](https://images.openai.com/static-rsc-4/O9S8_U4TqyfYvZ_sauc5Yj2XIa_CTGn0U0QvWwrSf1KvHsl6LyyP1kw0IIgOvA_3aXU1FvBjflkWYBzeJBO8XUPAixxMIxagdZ8-aXaHYzuHNEGAw_psmjNaZKr3RsL2rA4B-QrdqUlGa06Mr7fG1FSPzctJat2wpdgwXmR9fZk?purpose=inline)
+
+**AI & Automation**
+
+Identifying opportunities for AI, automating repetitive processes, and integrating intelligent systems into existing operations.
+
+[BridgeIQ Technologies — US IT Staffing & Workforce Solutions](https://images.openai.com/static-rsc-4/YjZrJA7EhBr6hwpl7ZgZ0Qa3krZH-aBBM7Fr9yow1Bc901q8ZCWsd9F0dr_cJrem_S4WQKKhdPAk5RXOPzyxpjqBmbv6LAiMVBgCF5mRo2qjDF5ngSH8g6hf0E-XLJtWVRoBh53NltqLgrToTLQgEwZh9yHT0pEW1YfjrImkxbE?purpose=inline)
+
+**Software Development & Engineering**
+
+Custom applications, integrations, database architecture, application modernization, and technical problem-solving.
+
+[L'entreprise AGSI pour tout le matériel informatique](https://images.openai.com/static-rsc-4/ckE6oP1CUsYKUH9Iu66RIphltV1NthoaYT-E-AsmuXHH-xaXBfFgLGe_iBxVIgo6K9EwuSDseYIcNosu81vdsSvMaHH0DggS1aN5J_8S1eNWb-1YMsMFbQp9N8B5B7B0q4gFcCbpPocUGSeaXswVrV6yaW_ED8VSJMcPdIHBbPI?purpose=inline)
+
+**Technology Infrastructure**
+
+Helping organizations evaluate, implement, and improve the systems and infrastructure they depend on.
+
+[Where Should Tradies Start With AI | Your IT & Tech Mates](https://images.openai.com/static-rsc-4/lSi1aPMSzUqmodcCo6tJR87yW9fGViOeKtDcnZy6pKviZK8K6IeRh-cGkDxReUHHmjlZ8xjh43JWEMhI15PmUt4pK2q24KFxXVQbmT4p4SGLS9ptHmtMzF9mk4kNte03p0JsKXzYaec1LDWXPQLMlRmjpgQZ4idqm92712z850g?purpose=inline)
+
+**Technology Coaching & Advisory**
+
+Helping individuals and businesses understand technology, develop technical capabilities, and make better use of the tools available to them.
+
+_These are proposed service categories, not a finalized list._
+
+## **One thing I'd do differently**
+
+I'd make every service clickable, opening a detail panel or dedicated page explaining:
+
+- What problems you solve.
+- Who benefits from the service.
+- What working with you looks like.
+- How someone can get started.
+
+And I'd include a prominent **Let's Talk About Your Technology Needs** call to action.
+
+You don't need to convince everyone that you're the right person for everything. You need to make it easy for someone with a problem to recognize that you might be the right person to call.
+
+### **One thought for tomorrow**
+
+I wouldn't rush into implementing five categories just yet. Let's establish your actual service catalog first, including things you enjoy doing, things you're exceptionally good at, and things you're willing to take on professionally.
+
+**The goal is to make your website a source of business, not simply a showcase of your experience.**
+
+## Me:
+
+I’m also willing to do Fractional CTO stuff, but I’m probably not the cheapest option there. I think I’m more comfortable with the Coaching & Advising in the Technology Realm. I’m also better at frontline IT work
+
+## You:
+
+Now we're getting closer to something I think genuinely represents you.
+
+I see three distinct parts to what you're describing, and they don't necessarily need to compete with each other.
+
+**You can be the person businesses call when they need help understanding technology, making technology decisions, or actually getting technology to work.**
+
+That's a pretty useful market position.
+
+### **I'd organize your services into three primary areas**
+
+[Where Should Tradies Start With AI | Your IT & Tech Mates](https://images.openai.com/static-rsc-4/lSi1aPMSzUqmodcCo6tJR87yW9fGViOeKtDcnZy6pKviZK8K6IeRh-cGkDxReUHHmjlZ8xjh43JWEMhI15PmUt4pK2q24KFxXVQbmT4p4SGLS9ptHmtMzF9mk4kNte03p0JsKXzYaec1LDWXPQLMlRmjpgQZ4idqm92712z850g?purpose=inline)
+
+[youritmates.com](https://youritmates.com/guides/tradie-admin/ai-for-tradies-where-to-start.html?utm_source=chatgpt.com)
+
+**1. Technology Coaching & Advisory**
+
+Primary positioning
+
+- Technology guidance and education.
+- Technology selection and evaluation.
+- AI adoption and practical implementation advice.
+- Business technology strategy.
+- Helping business owners understand what they actually need.
+- Ongoing technology advisory.
+
+[Foundry Fractional - Fractional CTO Advisory](https://images.openai.com/static-rsc-4/kG8zQ-a6pkSKxFMNckc6AEGWgwNsu3Mo5sAF1vxtqpXm8GOFraIpLscXpxzIAer3lNUwAeitKI5FDnTcdm-N_6b7T0GlR355F7lyCrsTb270D6vosnEKaum8sZjWK9BBnGqmLfx8vlb1OOM187QG3tCplfkYlDzrFIJzcJpDa8U?purpose=inline)
+
+[foundryfractional.com](https://foundryfractional.com/the-cto-skills-that-matter-in-2025-why-modern-leadership-is-your-startups-secret-weapon?utm_source=chatgpt.com)
+
+**2. Fractional CTO & Technical Leadership**
+
+- Technology leadership for businesses without an in-house CTO.
+- Technical architecture and direction.
+- Software development oversight.
+- Vendor and technology evaluation.
+- AI and digital transformation strategy.
+- Technical team guidance.
+
+This is a premium engagement, not necessarily an entry-level service.
+
+[Suporte técnico para empresas | ICMP Consultoria em TI](https://images.openai.com/static-rsc-4/YA1Tw4CznNxIiacs7w5Z8Prplvvwuuu0dUdm63QMIX2uKyMFxOVr-f7H4mhTTS_wGtcnjNXJjF-0C5e-EtG4PeLXlT-UYSld6CGhXnxdEr92feD8OKNERWLd7I9TviSzZ9YROrV1gT4AN69-bwm-4rtZH0IOS7ICf8LALg1bpFg?purpose=inline)
+
+[icmpconsultoria.com.br](https://www.icmpconsultoria.com.br/servicos/suporte-tecnico-para-empresas?utm_source=chatgpt.com)
+
+**3. Frontline Technology Support**
+
+- Computer and software troubleshooting.
+- Hardware and software setup.
+- Network and connectivity troubleshooting.
+- Application configuration.
+- Technology migrations.
+- Helping people solve everyday technology problems.
+
+This gives individuals and smaller businesses a way to work with you without committing to a large consulting engagement.
+
+### **There's a business opportunity in that combination**
+
+Consider the different ways someone might enter your business:
+
+| Client need                                          | Potential engagement |
+| ---------------------------------------------------- | -------------------- |
+| "I don't understand AI. Where do I start?"           | Coaching             |
+| "We need someone to guide our technology decisions." | Advisory             |
+| "We need experienced technical leadership."          | Fractional CTO       |
+| "Our software isn't working correctly."              | Technical support    |
+| "We need someone to build or integrate something."   | Engineering          |
+
+These aren't five unrelated businesses. They're different ways of applying the same underlying expertise.
+
+And importantly, you don't have to compete on price in every category.
+
+Your 26 years of engineering experience are particularly relevant to the advisory and fractional CTO offerings. You aren't selling hours of generic IT support; you're offering accumulated technical judgment.
+
+### **My recommendation for your website**
+
+I'd retain **Technology Coach & Consultant** as a possible identity, but position the actual business around:
+
+**Technology Guidance. Practical Solutions. Real-World Experience.**
+
+That gives you room to serve individuals, small businesses, and organizations without making AI your entire identity.
+
+One thing I'd like to establish before we build the service catalog tomorrow:
+
+**When you say frontline IT work, are you thinking primarily remote support, or are you also interested in hands-on IT work for local businesses (computer setup, networking, hardware, etc.)?**
+
+That distinction matters because it affects how we package and price those services.
+
+## Me:
+
+Maybe when we do a section on the services I provide, we can do it as tabs that you can select then each tab shows something different
+
+## You:
+
+I like that approach quite a bit. In fact, I think tabs would work better than putting all your services on the page at once.
+
+It gives visitors a clean introduction and lets them explore the areas where they need help without overwhelming them.
+
+## **How I'd structure it**
+
+Imagine a section titled:
+
+# **How I Can Help**
+
+_Technology doesn't have to be complicated. Whether you need guidance, technical leadership, or someone to get things working, I can help._
+
+Coaching & AdvisingFractional CTOIT SupportEngineering
+
+**Fractional CTO & Technical Leadership**
+
+Experienced technical leadership without the commitment of hiring a full-time CTO.\
+**What I can help with**
+
+Technology strategy and architecture
+
+Technical team leadership
+
+Software development oversight
+
+Vendor and platform evaluation
+
+AI and digital transformation direction
+
+Let's Talk About Your Needs&#x20;
+
+Interactive concept — an example of how the website section could behave.
+
+### **Why I like this design**
+
+- Visitors see the available services without scrolling through enormous descriptions.
+- Each service gets its own space and explanation.
+- You can expand individual offerings without redesigning the whole section.
+- It works well on desktop and mobile.
+- It keeps the website focused on what clients need rather than just listing your qualifications.
+
+**One additional thought:** I'd make Coaching & Advisory the default selected tab. That's the professional identity you're most comfortable with, while the other tabs demonstrate the breadth of what you can actually deliver.
+
+And since you're using Decap CMS, we can eventually make the tab content editable through the CMS rather than having to change React code every time you adjust a service.
+
+I'd put this on tomorrow's portfolio work list. 🙂
