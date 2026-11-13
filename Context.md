@@ -12800,3 +12800,558 @@ That gives us a consistent interaction pattern across the site without making ev
 **One design detail I'd keep:** use the same tab behavior as _How I Can Help_, but let the content determine its own height. No artificial equal-height panels or oversized containers.
 
 I think this is a good direction. It organizes the information without removing anything meaningful.
+
+## Me:
+
+Please read `Context.md` in the `chris-portfolio-lumetis-context` repo so that you can get caught up on what we've already done & where we're going with the `chris-portfolio-lumetis` repo. We're currently discussing putting the `Beyond Technology` cards into tabs. My idea is that what you said feels a bit incomplete.: I think we should have tabs for Hobbies & Interests, Operating Systems & Open Source, Languages, Development Languages & Technologies
+
+## You:
+
+I've read `Context.md` in `chris-portfolio-lumetis-context`, including the decisions and the recent discussion. I'm caught up on where we are.
+
+And yes, I see what you mean. My previous suggestion left out an important piece: **Development Languages & Technologies**. That is a substantial category in its own right, and it shouldn't be folded into either spoken Languages or Operating Systems & Open Source.
+
+Your four-tab structure is more complete:
+
+1. **Hobbies & Interests**
+2. **Operating Systems & Open Source**
+3. **Languages**
+4. **Development Languages & Technologies**
+
+That separates four different aspects of who you are and what interests you, rather than trying to fit everything into three broad categories.
+
+I'd make one important adjustment to the existing content organization to support that:
+
+- **Hobbies & Interests:** Keep personal interests here. Move the Operating Systems & Open Source group out of this category.
+- **Operating Systems & Open Source:** Give Debian, KDE Plasma, Git, PostgreSQL, Docker, Ollama, and your open-source philosophy their own section.
+- **Languages:** Keep spoken-language information separate from programming languages.
+- **Development Languages & Technologies:** Bring the existing technical groups from the Technologies & Skills content into this tab.
+
+### **How I'd present it**
+
+Use the same tab interaction pattern as **How I Can Help**:
+
+- Four tabs at the top.
+- One active content panel at a time.
+- Each panel has its own heading and content.
+- Consistent styling, spacing, and transitions.
+- Responsive behavior on smaller screens.
+
+And importantly, **all four categories remain editable through Decap CMS**. We're changing the presentation and organization, not moving content back into hardcoded JavaScript.
+
+I think this is a stronger structure. It gives each category a clear identity, keeps the page manageable, and lets someone explore the parts of your life and experience that interest them. 🙂
+
+## Me:
+
+Then let's make it happen
+
+## You:
+
+It's implemented and committed directly to `main`. No new branches, and no deployment. 🙂
+
+I checked the existing implementation before changing anything. The content was already organized into the four categories, and Decap already managed both the About Me and Technologies JSON files. The missing piece was making the tab presentation work cleanly with the existing card styling.
+
+### **What changed**
+
+Committed to main
+
+**Beyond Technology now has four tabs, in this order:**
+
+1. Hobbies & Interests
+2. Operating Systems & Open Source
+3. Languages
+4. Development Languages & Technologies
+
+I also made a few important presentation improvements:
+
+- Each tab displays its own heading and content.
+- Only the selected panel is visible.
+- Removed the unnecessary nested card treatment that made the content feel oversized.
+- Added responsive styling: four columns on larger screens and two columns on smaller screens.
+- Preserved keyboard navigation, including arrow keys, Home, and End.
+- Kept the content connected to Decap CMS.
+
+### **Content management**
+
+Nothing needed to be moved back into JavaScript or hardcoded into HTML.
+
+| Decap CMS entry                      | Manages                                                             |
+| ------------------------------------ | ------------------------------------------------------------------- |
+| About Me                             | Hobbies, Operating Systems & Open Source, Languages                 |
+| Development Languages & Technologies | Programming languages, libraries, databases, and other technologies |
+
+### **Verification**
+
+I checked that:
+
+- JavaScript parses successfully.
+- Both JSON files parse successfully.
+- All four tabs appear in the intended order.
+- Operating Systems & Open Source is separate from Development Languages & Technologies.
+- Both content collections remain registered in Decap.
+
+### **Update your local copy**
+
+Run this from your portfolio repository:
+
+```
+git pull origin main
+```
+
+Then refresh:
+
+- Portfolio: `http://localhost:5500`
+- Decap CMS: `http://localhost:5000/admin`
+
+The next thing I'd like to review is how the four tabs look together in your browser, particularly the longer Development Languages & Technologies label on a smaller screen. We can adjust the presentation if needed without changing the content architecture.
+
+## Me:
+
+We already have the card titles as the titles in the tabs, isn't it redundant to have them listed INSIDE the tabs as well? Also, could we put the icons in the tabs as well? Just thoughts
+
+## You:
+
+I agree with both thoughts. In fact, I think they improve the design.
+
+**1. Remove the repeated headings inside the panels.**
+
+The tab already tells the visitor what they're looking at. Repeating the same title immediately underneath adds no information. We should let the content begin directly beneath the tabs.
+
+**2. Put the icons in the tabs.**
+
+I like this idea because the icons give each category a visual identity and make the navigation easier to scan.
+
+I'd use the existing card icons rather than introduce a new icon set. That keeps the visual language consistent across the site.
+
+My suggested layout:
+
+**Hobbies & Interests**
+
+**Operating Systems & Open Source**
+
+**Languages**
+
+**Development Languages & Technologies**
+
+ACTIVE TAB CONTENT
+
+### **Your interests, beyond technology**
+
+The actual card content starts here, without another copy of the tab title.
+
+Illustrative layout, not a screenshot of the live site.
+
+One detail I'd preserve: **the green accent should identify the active tab**, while inactive tabs retain the normal dark surface and muted icon treatment.
+
+I'd make these changes. It's cleaner, less repetitive, and gives the tabs a little more personality without adding visual clutter.
+
+## Me:
+
+In Decap, shouldn't the sections match what the site shows? If we can edit a certain area, shouldn't we see that on the back end? I mean, it works fine now, but say I take 3 months off from working on the website, then come back to it to update certain sections; I'm not likely to know what does what, where what goes, nothing like that
+
+## You:
+
+Yes. And I think you're identifying a gap in how we've approached the CMS.
+
+**The Decap backend should reflect the structure of the actual website—not just expose the underlying JSON files.**
+
+Right now, we've made the content editable, which solves the technical problem. But that doesn't necessarily make it easy to maintain. If you return to the site three months from now, you shouldn't have to remember that `site.json` contains the FAQ, that `about.json` controls Beyond Technology, or that a particular field buried in a collection controls a section halfway down the homepage.
+
+That's a usability problem, even though everything technically works.
+
+## **What I think we should aim for**
+
+The Decap interface should follow the site's navigation and content structure. For example:
+
+- **My Journey** — edit the journey section, milestones, and related content.
+- **My Views on Tech** — edit the views and philosophy presented on the site.
+- **How I Can Help** — edit the four service areas and their descriptions.
+- **Linux & Open Source** — edit the environment details and related content.
+- **FAQ** — edit questions and answers.
+- **Where I'm Based** — edit location information.
+- **Beyond Technology** — edit hobbies, interests, languages, and development technologies.
+- **My Work** — manage portfolio projects.
+- **Contact** — manage contact details and links.
+- **Site Settings** — manage global items such as the site title, metadata, navigation, and footer.
+
+The exact organization should follow the current site, not an assumed version of it.
+
+I would also make two changes to the editing experience:
+
+1. **Use recognizable section names.** Avoid backend labels like `About Me`, `Site Content`, or `Technologies` when the actual site calls the section something else.
+2. **Explain what each editor controls.** Add short descriptions and field-level help text so it's clear what a field changes and where the content appears.
+
+## **How I'd organize it**
+
+I'd recommend one Decap entry for each independently editable section, with the sidebar following the website's organization.
+
+That may mean splitting the current `site.json` into smaller, section-specific JSON files. There's no need to change the way the website looks or behaves to do that. The site can continue loading the same content; we're just making the content easier to find and maintain.
+
+For example, opening **How I Can Help** should show the four service areas—not a large collection of unrelated website settings.
+
+And **Site Settings** should contain genuinely global things, rather than becoming a dumping ground for content that belongs elsewhere.
+
+The principle I'd use is:
+
+**If you can point to an area on the website, you should be able to find that same area in Decap and understand how to edit it without consulting the source code.**
+
+That's the standard I'd like us to build toward. The current setup works, but I agree that maintainability matters just as much as functionality.
+
+## Me:
+
+Then let
+
+## You:
+
+Looks like your message got cut off. Were you saying, “Then let's make that change”?
+
+## Me:
+
+Yes, I was; I just hit `enter` accidentally before I was ready
+
+## You:
+
+Done. I've reorganized the CMS directly on GitHub `main`, without creating a branch. The website now has separate content files that correspond to its actual sections.
+
+### **New Decap CMS organization**
+
+**Portfolio**
+
+- Homepage
+- My Journey
+- My Views on Tech
+- How I Can Help
+- Linux & Open Source
+- FAQ
+- Where I'm Based
+- Beyond Technology
+- Development Languages & Technologies
+- My Work
+- Contact
+- Site Settings
+
+### **What changed behind the scenes**
+
+- Split the old `site.json` into individual section files.
+- Moved the My Journey heading into `journey.json`, alongside its milestones.
+- Moved the My Work heading and project filters into `projects.json`, alongside the projects themselves.
+- Kept Beyond Technology and Development Languages & Technologies independently editable.
+- Created a dedicated Site Settings file for browser metadata, navigation, and footer content.
+- Updated `script.js` to load the new files while preserving the existing website rendering.
+- Removed the old consolidated `site.json`.
+
+**I also verified:**
+
+- All 12 CMS entries point to their corresponding files.
+- All content JSON files parse successfully.
+- The JavaScript parses successfully.
+- All 8 projects and 18 journey milestones were preserved.
+- The four Beyond Technology categories remain intact.
+
+### **Get the changes locally**
+
+From your portfolio repository, run:
+
+```
+git pull origin main
+```
+
+Then refresh:
+
+- Portfolio: [http://localhost:5500](http://localhost:5500?utm_source=chatgpt.com)
+- Decap CMS: [http://localhost:5000/admin](http://localhost:5000/admin?utm_source=chatgpt.com)
+
+The important difference is that when you return to this project months from now, you can open Decap, find the section by the same name you see on the website, and edit it without having to remember how the underlying JSON is organized.
+
+That's a much better maintenance experience.
+
+## Me:
+
+We did that, but we didn't address the points that I brought up about having duplicate titlles in the cards in `Beyond Technology` & moving the icons into the tab names. Also, `Development Languages & Technologies` in Decap should be under beyond technology as that's the actual section & I'm nt sure how `Homepage` & `Site Settings` are actually different since they deal with the same things so would there be a way of combining them & also making where I can select the picture I use from the uploaded media? Because what if I like that cartoon image now, but in 3 months I want to change it to another picture?
+
+## You:
+
+You're right. We completed the file reorganization, but we didn't finish the actual editing experience you described. I treated those as separate follow-up details when they should have been part of the same change.
+
+There are four things to address:
+
+1. **Beyond Technology:** Remove the repeated headings inside the cards and put each card's existing icon into its corresponding tab.
+2. **Decap organization:** Put Development Languages & Technologies under Beyond Technology, because that's where it appears on the website.
+3. **Homepage and Site Settings:** Reconsider the split. If they're both managing the same overall site identity and presentation, they should be one clearly organized editing area rather than two places to look.
+4. **Homepage image:** Make the image selectable from Decap's uploaded media library. You shouldn't have to edit code to replace the cartoon image later.
+
+I'll inspect the current implementation before changing it, particularly how the hero image is currently selected and rendered. I also want to make sure the CMS grouping is supported by Decap itself rather than just giving the entries misleading labels.
+
+I've now addressed all four points and committed the changes directly to `main`.
+
+### **1. Beyond Technology**
+
+Implemented
+
+- Removed the repeated card headings from inside the panels.
+- Moved each existing icon into its corresponding tab.
+- Kept the original tab titles and their order.
+- Removed the duplicate Operating Systems & Open Source group heading as well.
+
+The four tabs remain:
+
+1. Hobbies & Interests
+2. Operating Systems & Open Source
+3. Languages
+4. Development Languages & Technologies
+
+The icons and titles now identify each panel without repeating themselves inside it.
+
+### **2. Development Languages & Technologies**
+
+Implemented
+
+This is now part of the **Beyond Technology** entry in Decap.
+
+I moved its content into `content/about.json` as a separate nested object. That means when you open Beyond Technology, you'll find all four categories there.
+
+It is no longer a separate CMS entry.
+
+### **3. Homepage and Site Settings**
+
+Combined
+
+These are now one Decap entry:
+
+**Homepage & Site Settings**
+
+Inside it, the content is organized into four groups:
+
+- Homepage
+- Browser Metadata
+- Navigation
+- Footer
+
+They're still separate in the JSON structure, but you only have one place to go in Decap.
+
+### **4. Changing the homepage image**
+
+Implemented
+
+This is probably the most useful improvement.
+
+The homepage image is now a CMS-managed field using Decap's image widget. It supports uploading an image or selecting one already in the media library, and displays a thumbnail of the selected image.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://decapcms.org&sz=32)
+
+Open-Source Content Management System
+
+I've preserved the current `chris.png` image as the selected image.
+
+When you decide to change it:
+
+1. Open Homepage & Site Settings.
+2. Expand Homepage.
+3. Select the Homepage image field.
+4. Upload or select the replacement.
+5. Publish.
+
+The website will use the new image automatically. No HTML or JavaScript editing required.
+
+### **Verification**
+
+I checked the updated files and confirmed:
+
+- JavaScript syntax is valid.
+- Both updated JSON files parse.
+- The old standalone Homepage and Technologies files have been removed.
+- The CMS configuration references the new structure.
+- The image field is connected to the homepage rendering logic.
+- All four Beyond Technology tabs remain intact.
+
+I haven't visually tested the updated CMS in your local browser yet.
+
+**Pull the changes:**
+
+```
+git pull origin main
+```
+
+Then refresh:
+
+- [Portfolio](http://localhost:5500?utm_source=chatgpt.com)
+- [Decap CMS](http://localhost:5000/admin?utm_source=chatgpt.com)
+
+This gets us much closer to the original goal: the website and its editing interface should make sense to someone returning to the project months later, without needing to remember how we built it.
+
+## Me:
+
+I like it, but I have another question or 2.
+
+1. We currently have `Homepage & Site Settings` in Decap, that's wonderful but wouldn't `Settings` be a better fit?
+   1. In `Homepage & Site Settings` we currently don't have a way to select or change any of the Colors used within the site, so can it even be called `Homepage & Site Settings` since we can't actually make those changes?
+
+## You:
+
+I think you're right on both counts. There's a distinction here between **what the section manages today** and **what the name implies it manages**.
+
+### **1. Rename it to&#x20;**`Settings`
+
+I prefer `Settings` over `Homepage & Site Settings`.
+
+The homepage is one part of the website's configuration. It doesn't need to be elevated into the name of the entire section. A single `Settings` entry is cleaner and easier to understand when you come back to the CMS months from now.
+
+We can keep the internal groups:
+
+- **Homepage** — hero content, portrait, introduction.
+- **Browser Metadata** — page title, description, and related metadata.
+- **Navigation** — menu labels and links.
+- **Footer** — footer content and links.
+
+### **2. What about colors and other visual settings?**
+
+This is the more important point.
+
+You're correct: if we call something `Settings`, it should provide access to the settings that a site administrator would reasonably expect to control.
+
+Right now, the colors are defined in CSS variables rather than managed through Decap. That means changing the site's accent color, background, text colors, and other visual properties requires editing code.
+
+I'd recommend adding a **Design & Appearance** group under `Settings`.
+
+That could manage:
+
+| Setting          | Purpose                      |
+| ---------------- | ---------------------------- |
+| Primary accent   | Main green accent color      |
+| Page background  | Overall site background      |
+| Surface          | Card and section backgrounds |
+| Elevated surface | Raised elements and panels   |
+| Primary text     | Main text color              |
+| Secondary text   | Supporting text              |
+| Muted text       | Less prominent text          |
+| Borders          | Separators and outlines      |
+
+We would store those values in the settings JSON and have the site apply them through CSS custom properties.
+
+That gives us one source of truth: change a color in Decap, publish, and the site updates without editing CSS.
+
+**One design decision I'd preserve:** the existing CSS values should become the initial defaults. We shouldn't change the appearance just because we're making it configurable.
+
+My recommendation: rename the CMS entry to **Settings**, add **Design & Appearance**, and make the settings actually control the site rather than merely describe it.
+
+That makes the CMS a proper administrative interface instead of just a content editor.
+
+## Me:
+
+I wasn't saying let's change things, I was saying **IF** we wanted to later, we should have that since we're calling it `Settings`. I'm also thinking about basing it on Data. The data may dictate how we present ourselves, maybe the data says a light background would be better, or the accent color isn't right. I'm **NOT** saying we need to change everything for the sake of change, I'm saying that IF we want to make that change we can
+
+## You:
+
+Ah, I see the distinction now. You're not proposing a redesign. You're proposing **the ability to make informed changes later, without having to modify the code every time we want to evaluate a different direction.**
+
+And basing those decisions on data makes even more sense.
+
+For example:
+
+- The data might suggest a light background communicates better than the current dark design.
+- The accent color might not be producing the visual response we want.
+- We might discover that certain text colors or contrast combinations work better.
+- We might eventually want to test different visual presentations for different audiences.
+
+None of that means we should change anything today.
+
+### **Here's how I'd approach it**
+
+Rename `Homepage & Site Settings` to **Settings** and give it a **Design & Appearance** group.
+
+That group would expose the existing design variables as configurable values, while preserving every current value as the default.
+
+The important distinction is:
+
+1. **Current presentation:** What the website looks like today.
+2. **Available configuration:** What we're able to change through Decap.
+3. **Decision-making:** Whether evidence gives us a reason to change anything.
+
+I'd also keep the implementation flexible enough that we can add other presentation settings later without restructuring the CMS.
+
+**The principle is simple: make the system adaptable, but don't change the presentation without a reason.**
+
+That's a much better foundation than making design decisions just because we now have the ability to change them.
+
+## Me:
+
+Then let's make it happen
+
+## You:
+
+Let's do it. I'll keep the current design exactly as it is and make its core visual settings configurable through Decap.
+
+The change will cover three things:
+
+1. Rename **Homepage & Site Settings** to **Settings**.
+2. Add a **Design & Appearance** group with editable color values, initially matching the existing palette.
+3. Connect those values to the site's CSS variables so publishing a change in Decap actually changes the website.
+
+I'll also keep the distinction we discussed: making a setting available doesn't mean changing it. The current presentation stays intact unless we deliberately decide otherwise.
+
+Committed to GitHub main
+
+The changes are in. And importantly, **the existing appearance has not been changed.**
+
+### **What changed in Decap**
+
+The former **Homepage & Site Settings** entry is now **Settings**.
+
+It retains the existing groups and adds a new, collapsed-by-default **Design & Appearance** group.
+
+You now have nine editable color controls:
+
+| Setting                      | Current value |
+| ---------------------------- | ------------- |
+| Page background              | `#2A2A2A`     |
+| Card and section surfaces    | `#2A2A2A`     |
+| Elevated surfaces and panels | `#383838`     |
+| Primary text                 | `#F5F5F5`     |
+| Secondary text               | `#B7B7B7`     |
+| Muted text                   | `#8C8C8C`     |
+| Accent color                 | `#0BA376`     |
+| Text on accent color         | `#FFFFFF`     |
+| Borders and separators       | `#444444`     |
+
+The controls use Decap's built-in color picker, with manual color entry enabled.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://decapcms.org&sz=32)
+
+Open-Source Content Management System+1
+
+### **What changed in the website**
+
+- The site now reads those colors from `site-settings.json`.
+- CSS variables are updated automatically when the site loads.
+- Accent hover, highlight, and focus colors derive from the selected accent color.
+- Main backgrounds, cards, panels, and text use the configurable theme values.
+- Missing or invalid color values leave the CSS defaults intact.
+
+### **Verification**
+
+All structural checks passed
+
+- JSON parses correctly.
+- JavaScript syntax checks successfully.
+- All nine color settings are connected.
+- The original palette is preserved.
+- Decap is using version 3.17.3.
+
+I haven't visually tested the changes in your local browser, since these commits are on GitHub rather than your local machine.
+
+### **Your next step**
+
+From your portfolio repository, run:
+
+```
+git pull origin main
+```
+
+Then refresh:
+
+- Portfolio: [http://localhost:5500](http://localhost:5500?utm_source=chatgpt.com)
+- Decap CMS: [http://localhost:5000/admin](http://localhost:5000/admin?utm_source=chatgpt.com)
+
+Open **Settings → Design & Appearance**.
+
+Now we have the flexibility to evaluate a different presentation when the evidence gives us a reason, without having to rewrite the styling to do it. That's exactly the kind of adaptability we wanted.
