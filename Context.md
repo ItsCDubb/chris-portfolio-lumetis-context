@@ -15942,3 +15942,685 @@ I'd mark **visual rendering and asset availability as passed**.
 The only remaining check in this category is the browser console. We don't need to investigate loading performance unless we find an actual error.
 
 After that, I'd like to move into a different area: **SEO, metadata, and how search engines interpret your portfolio.** That's where we can start evaluating whether the site is not only functional, but discoverable.
+
+## Me:
+
+Please read the `Context.md` file on `chris-portfolio-lumetis-context` repo so you're caught up with the context & more importantly, what decisions we've made, why we made them, & what step we're on at this point. I want you to know what we're doing in the `chris-porfolio-lumetis` repo that we're actually working on for this project
+
+## You:
+
+I've read the current `Context.md` from `ItsCDubb/chris-portfolio-lumetis-context` on `main`.
+
+The key point is that we're **past the build-and-basic-functionality stage. We're in the review and validation stage**, working toward a finished portfolio before deployment. The decisions in the context are not suggestions to revisit; they're the foundation we've already agreed on.
+
+A few things I'm carrying forward:
+
+- **This is Chris Warren's portfolio**, not a Lumetis company website. Lumetis is part of your professional story, but it doesn't define all of it.
+- The positioning is **Technology Coach & Consultant**.
+- The established design is dark-first, with the charcoal background and green accent we selected.
+- The site is being developed locally. **No Netlify deployment until the work is finished and reviewed.**
+- We work against the actual `chris-portfolio-lumetis` repository, on `main`. I inspect the source rather than sending you on a hunt through files.
+- We don't change working code just to make changes. We identify an actual issue, understand why it's happening, and then make a focused change if one is needed.
+
+### **What we're actually working with**
+
+I also inspected the current `main` branch of `ItsCDubb/chris-portfolio-lumetis`, rather than relying only on the context notes.
+
+The repository is a **static HTML, CSS, and JavaScript portfolio**, with **Decap CMS managing editable content stored in JSON files**. That's an intentional separation: the public site doesn't need a database or a frontend framework just to display your portfolio.
+
+Your local setup is currently:
+
+- Portfolio: `http://localhost:5500`
+- Decap CMS: `http://localhost:5000/admin`
+- CMS content is stored in the repository and published through GitHub.
+- The CMS uses its local proxy during development; the production GitHub authentication setup is deferred until deployment.
+- The current CMS configuration uses `main`, consistent with our decision not to introduce feature branches.
+
+The content model is broader than just project cards. It covers your homepage and appearance settings, professional timeline, technology views, services, technology environment, FAQ, location, About/Beyond Technology content, projects, and contact form. The project descriptions and role information belong in the project popup—not on the initial card or its hover state.
+
+The latest commits on `main` also confirm that we've been doing targeted accessibility and usability work, not rebuilding the site. The recent changes cover contrast and control boundaries, keyboard and screen-reader behavior, reduced motion, focus behavior, map labeling, and scroll controls.
+
+### **Where we are in the review**
+
+Here's the status recorded in `Context.md`:
+
+| Review area                               | Status                                                     |
+| ----------------------------------------- | ---------------------------------------------------------- |
+| Keyboard navigation and focus             | Passed                                                     |
+| Project dialogs and media gallery         | Passed                                                     |
+| Contact form accessibility and validation | Passed                                                     |
+| Responsive layouts                        | Passed in simulated desktop, phone, and tablet profiles    |
+| Navigation and links                      | Passed                                                     |
+| Project and FAQ interactions              | Passed                                                     |
+| Visual rendering and asset availability   | Passed                                                     |
+| Source-level asset integrity              | Passed — 25 project media references checked, none missing |
+| Browser console                           | Not explicitly checked yet                                 |
+| Netlify form delivery                     | Deferred until deployment                                  |
+
+One distinction: the device testing used Mobile Simulator profiles, so we've validated those viewports, not every physical device.
+
+### **The next step**
+
+The last agreed sequence is:
+
+1. Finish the browser console check. We're looking for actual JavaScript errors or failed requests, not ordinary loading delays.
+2. Move into **SEO, metadata, and search-engine discoverability**.
+3. Review the remaining content and technical details.
+4. Complete final review.
+5. Only then deploy to Netlify and test actual form delivery.
+
+I noticed one detail worth keeping in view for the SEO review: the current committed homepage metadata and content use **“Technology Consultant”**, while our earlier design discussions established **“Technology Coach & Consultant.”** A recent commit deliberately aligned the browser title with the Technology Consultant positioning. I won't silently change that or assume the earlier wording is still the final choice; we'll evaluate the current positioning as part of the metadata review.
+
+**No changes have been made during this review.** I have inspected the context repository and the actual portfolio source on `main`. I understand the decisions, the reasons behind them, and where we are in the work.
+
+We can pick up at the browser-console check, then move into SEO.
+
+## Me:
+
+Alright, so what do you need me to do?
+
+## You:
+
+Not much. You've already done the bulk of the hands-on testing. I only need one thing from you to finish the next check.
+
+### **Step 1 — Check the browser console**
+
+With the portfolio open at `http://localhost:5500`:
+
+1. Press **F12** to open Developer Tools.
+2. Select the **Console** tab.
+3. Reload the portfolio with DevTools open.
+4. Look for red error messages.
+
+If there are errors, copy them here or take a screenshot. If there aren't any, just tell me **"No console errors."**
+
+That's it for now.
+
+### **What I'll handle after that**
+
+I'll inspect the current source for:
+
+- SEO metadata and search indexing configuration.
+- Open Graph and social sharing metadata.
+- Page titles and descriptions.
+- Canonical URL consistency.
+- Structured data opportunities.
+- Search-engine accessibility and crawlability.
+
+I'll compare the actual implementation against the decisions we've already made, identify anything worth addressing, and bring you the findings before changing anything.
+
+**One check from you, then I'll take the next phase.**
+
+## Me:
+
+Failed to get subsystem status for purpose Object
+Failed to get subsystem status for purpose [object Object]
+content-script.js:104 Failed to get subsystem status for purpose Object
+maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true:1 Failed to load resource: net::ERR_BLOCKED_BY_CLIENT
+
+## You:
+
+Those messages do **not** indicate that the portfolio itself is failing.
+
+Here's what they mean:
+
+1. `Failed to get subsystem status for purpose Object` — this is coming from `content-script.js`, which is typically injected by a browser extension. It isn't identified as an error in your portfolio's own JavaScript.
+2. `maps.googleapis.com/.../gen_204 ... ERR_BLOCKED_BY_CLIENT` — the browser or an extension blocked a Google Maps request. That request is commonly associated with Google's internal checks; the message alone doesn't establish a problem with your site.
+
+Neither message, by itself, points to a broken portfolio feature or missing content.
+
+So I'd classify the console check as **no confirmed portfolio errors**. The two messages appear to be browser-side noise, not evidence of a defect in the site.
+
+I also started the SEO review against the actual `main` branch of `chris-portfolio-lumetis`. Here's what I've verified so far.
+
+### **SEO and search configuration**
+
+Present and consistent
+
+- `robots.txt` allows search engines to crawl the public site and disallows `/admin/`.
+- `sitemap.xml` lists the portfolio's canonical homepage.
+- **Canonical URL** points to `https://chris.lumetis.io/`.
+- **Open Graph and Twitter metadata** are present, including the title, description, and social-sharing image.
+- **Netlify build configuration** explicitly copies `robots.txt` and `sitemap.xml` into the published output.
+
+The canonical URL, sitemap URL, and social-sharing URL all agree. That's what we want.
+
+### **Items worth reviewing**
+
+1. **Structured data:** I haven't found Schema.org JSON-LD in the source. Adding a suitable `Person` schema could help search engines understand who the site represents and what professional identity it describes. This is an opportunity, not a launch blocker.
+2. **JavaScript-rendered content:** Much of the portfolio content is loaded from JSON by `script.js`. That's workable, but it deserves a closer look at how much meaningful content is present in the initial HTML versus what appears after JavaScript executes.
+3. **Social-sharing image:** The metadata references `chris.png`. The reference is consistent, but the image's dimensions and how it renders in social previews still need verification.
+
+### **Where we stand**
+
+The accessibility and responsive checks you've already completed are in good shape. The browser console messages don't give me a reason to revisit those.
+
+I'd keep the existing implementation intact while finishing the source review. **No code changes have been made.**
+
+Next, I'll focus on the rendered content and structured data, then give you a consolidated list of anything genuinely worth changing before deployment.
+
+## Me:
+
+Alright, let's get the SEO where it should be
+
+## You:
+
+Let's do it properly, without turning SEO into a collection of random meta tags.
+
+The foundation is already there: a canonical URL, crawl rules, sitemap, page description, and social-sharing metadata. I want to build on that rather than disturb what is working.
+
+The goal is for search engines to understand three things clearly:
+
+- **Who you are:** Chris Warren, technology consultant, senior software engineer, and AI systems consultant.
+- **What you do:** help organizations make sound technology decisions and implement systems that deliver practical results.
+- **What the site represents:** your professional portfolio and the work, experience, and services behind it.
+
+I'll keep the existing domain, static-site architecture, Decap CMS workflow, and `main` branch. No deployment while we're still reviewing.
+
+### **Phase 1 complete: identity and metadata**
+
+Committed to main
+
+I updated two files in `ItsCDubb/chris-portfolio-lumetis`:
+
+| Area             | Change                                                                                |
+| ---------------- | ------------------------------------------------------------------------------------- |
+| Page title       | Added the Technology Consultant and Senior Software Engineer positioning              |
+| Meta description | Now explicitly communicates practical AI, technology decisions, software, and systems |
+| Open Graph       | Added locale and image alternative text                                               |
+| Twitter cards    | Added image alternative text                                                          |
+| Structured data  | Added Schema.org `Person`, `WebSite`, and `WebPage` entities                          |
+| Decap CMS        | Synchronized the editable browser title and description                               |
+
+The structured data connects your professional identity to Lumetis and your LinkedIn profile. It also describes your areas of expertise without inventing credentials or adding unnecessary personal information.
+
+I verified that the JSON-LD parses correctly and that the HTML and CMS metadata agree.
+
+### **The bigger issue still to address**
+
+There's one architectural detail I don't want to overlook.
+
+**Most of your actual portfolio content is rendered by JavaScript after the page loads.** That includes services, projects, your professional journey, and other substantive sections.
+
+Google can render JavaScript, but relying on that isn't the strongest approach for search visibility or compatibility with other crawlers.
+
+My next priority is to make meaningful portfolio content available in the initial HTML response while preserving Decap CMS as the content-management system.
+
+After that, we'll check:
+
+1. Heading hierarchy and content relevance.
+2. Image alternative text and image metadata.
+3. Internal links and crawlability.
+4. Structured data validity.
+5. Sitemap and robots configuration.
+6. Social-sharing previews.
+
+**No deployment has occurred.** The changes are on `main`, and we're still working toward a complete review before publishing.
+
+## Me:
+
+I don't know what to say about the JavaScript problem, it's clear this is going to be a blocker because I tried to make sure that people with a weak internet connection weren't punished because my site was overwhelming their device up front
+
+## You:
+
+I think we need to pause before treating JavaScript as a problem that needs to be fixed. There's an important distinction here: **you deliberately designed the site to avoid making visitors pay a performance penalty just because they have a slower connection or less capable device.** That's a legitimate design priority, and I don't want to undermine it in the name of SEO.
+
+The goal isn't to make the site load more content up front. It's to make the content that's already there discoverable.
+
+There are three separate concerns:
+
+1. **Initial download:** How much HTML, CSS, JavaScript, and other resources the browser has to retrieve.
+2. **Execution:** How much work the visitor's device has to do to render the site.
+3. **Discoverability:** Whether search engines and other crawlers can understand the site's content.
+
+Those concerns overlap, but they aren't the same thing.
+
+### **What I don't want to do**
+
+I don't want to solve SEO by:
+
+- Duplicating all your JSON content in the HTML.
+- Making the initial HTML substantially larger.
+- Adding a framework or rendering dependency that increases the site's resource requirements.
+- Forcing visitors to download and process content they haven't asked to view.
+
+That would contradict the reason you built the site this way.
+
+### **What I'd recommend instead**
+
+I'd investigate a lightweight, progressive approach:
+
+- Keep JSON as the source of truth.
+- Keep the existing client-side rendering and interactions.
+- Preserve lazy loading and the current resource strategy.
+- Investigate whether we can generate a search-friendly HTML representation during the build process, without adding work to the visitor's browser.
+- Measure the resulting output rather than assuming that a change is an improvement.
+
+The important distinction is that **build-time work happens on the server, not on the visitor's device.** We can potentially improve crawler access without making the site heavier for people visiting it.
+
+And I want to be clear about one thing: JavaScript rendering is not automatically an SEO failure. Google can render JavaScript. The concern is compatibility with crawlers that don't execute it reliably, along with the delay before meaningful content becomes available.
+
+I would rather preserve your original performance philosophy and find a solution around it than sacrifice that philosophy to satisfy an SEO checklist.
+
+**Your visitors shouldn't have to pay for search-engine optimization.** That's the principle I'd use to guide the next phase.
+
+## Me:
+
+59
+Performance
+87
+Accessibility
+100
+Best Practices
+100
+SEO
+There were issues affecting this run of Lighthouse:
+
+Chrome extensions negatively affected this page's load performance. Try auditing the page in incognito mode or from a Chrome profile without extensions.
+There may be stored data affecting loading performance in this location: IndexedDB. Audit this page in an incognito window to prevent those resources from affecting your scores.
+59
+FCP
++8
+LCP
++9
+TBT
++8
+CLS
++25
+SI
++10
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+2.3 s
+Largest Contentful Paint
+4.5 s
+Total Blocking Time
+1,050 ms
+Cumulative Layout Shift
+0
+Speed Index
+2.3 s
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Improve image delivery Est savings of 298 KiB
+Render-blocking requests Est savings of 590 ms
+LCP request discovery
+Network dependency tree
+Use efficient cache lifetimes Est savings of 13 KiB
+Document request latency Est savings of 120 KiB
+Optimize DOM size
+LCP breakdown
+3rd parties
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce JavaScript execution time 1.8 s
+Minimize main-thread work 3.7 s
+Minify JavaScript Est savings of 33 KiB
+Reduce unused CSS Est savings of 18 KiB
+Page prevented back/forward cache restoration 2 failure reasons
+Minify CSS Est savings of 7 KiB
+Reduce unused JavaScript Est savings of 1,409 KiB
+Avoid long main-thread tasks 15 long tasks found
+User Timing marks and measures 4 user timings
+Avoid non-composited animations 1 animated element found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (10)
+Show
+87
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+ARIA
+Elements with an ARIA [role] that require children to contain a specific [role] are missing some or all of those required children.
+These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader.
+Contrast
+Background and foreground colors do not have a sufficient contrast ratio.
+These are opportunities to improve the legibility of your content.
+Tables and lists
+
+<dl>'s do not contain only properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements.
+Definition list items are not wrapped in <dl> elements
+These are opportunities to improve the experience of reading tabular or list data using assistive technology, like a screen reader.
+Navigation
+Heading elements are not in a sequentially-descending order
+These are opportunities to improve keyboard navigation in your application.
+Best practices
+Uses ARIA roles only on compatible elements
+These items highlight common accessibility best practices.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (30)
+Show
+Not applicable (27)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Browser Compatibility
+Baseline Features
+Passed audits (13)
+Show
+Not applicable (2)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Additional items to manually check (1)
+Hide
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (10)
+Show
+Captured at Nov 14, 2026, 5:23 PM CST
+Emulated Moto G Power with Lighthouse 13.5.0
+Single page session
+Initial page load
+Slow 4G throttlingNetwork throttling: 150 ms TCP RTT, 1,638.4 kb/s throughput (Simulated)
+Using Chromium 157.0.0.0 with devtools
+Generated by Lighthouse 13.5.0 | File an issue
+
+## You:
+
+Okay, this gives us a much clearer picture. And honestly, it changes where I'd put our attention.
+
+**Your biggest problem right now isn't SEO. It's the amount of work the browser is doing before the visitor can comfortably use the site.**
+
+Look at the results:
+
+**Lighthouse results**
+
+Nov 14, 2026
+
+## **59**
+
+**Performance**
+
+## **87**
+
+**Accessibility**
+
+## **100**
+
+**Best Practices**
+
+## **100**
+
+**SEO**
+
+### **1. Performance: here's what stands out**
+
+| Metric                   | Result   | What it tells us                            |
+| ------------------------ | -------- | ------------------------------------------- |
+| First Contentful Paint   | 2.3 s    | First visible content                       |
+| Largest Contentful Paint | 4.5 s    | Main content takes too long                 |
+| Total Blocking Time      | 1,050 ms | Browser is spending too long executing work |
+| Cumulative Layout Shift  | 0        | Excellent; layout is stable                 |
+| Speed Index              | 2.3 s    | Visual content appears relatively quickly   |
+
+Three diagnostics deserve particular attention:
+
+- **1.8 seconds of JavaScript execution time**
+- **3.7 seconds of main-thread work**
+- **1,409 KiB of potentially unused JavaScript**
+
+That last number is especially interesting. It suggests the browser is downloading or processing considerably more JavaScript than it needs for the initial experience.
+
+We also have:
+
+- 590 ms estimated savings from render-blocking requests.
+- 298 KiB estimated savings from image delivery.
+- 15 long main-thread tasks.
+
+This is not a reason to abandon your architecture. It's a reason to investigate what the browser is actually being asked to do.
+
+### **2. SEO: we have a good foundation**
+
+100 / 100
+
+The SEO audit passed, and Lighthouse explicitly reports that the structured data is valid.
+
+That's important because we have already added the Person, WebSite, and WebPage structured data.
+
+One qualification: Lighthouse's SEO score checks basic technical requirements. It doesn't establish search rankings or guarantee that every search engine can fully understand dynamically rendered content.
+
+But we shouldn't treat JavaScript rendering as an automatic SEO failure.
+
+### **3. Accessibility: there are specific issues to address**
+
+The 87 score gives us four areas to investigate:
+
+- ARIA roles missing required child elements.
+- Insufficient color contrast.
+- Improper definition-list markup.
+- Heading levels that don't descend sequentially.
+
+These are actual opportunities to improve accessibility, not reasons to redesign the site.
+
+### **4. What I'd do next**
+
+I would change our order of operations.
+
+1. **Performance:** Investigate the JavaScript execution, unused code, render-blocking resources, and image delivery.
+2. **Accessibility:** Correct the four categories of findings without disrupting the interactions you've already tested.
+3. **SEO:** Keep the existing metadata and structured data, then investigate crawler discoverability separately.
+
+One important caveat: Lighthouse specifically warns that Chrome extensions and IndexedDB data may have affected this run. We should eventually get a clean baseline in an extension-free session before treating 59 as a definitive score.
+
+### **The principle I want to preserve**
+
+You made a deliberate decision not to punish people with slower connections or less capable devices. I agree with that decision.
+
+I don't want to turn your portfolio into a heavyweight application just to make search engines happy.
+
+**Let's optimize what is already there before introducing another rendering strategy.**
+
+And specifically, I would like to inspect the JavaScript loading and execution paths before touching the rendering architecture. The 1.4 MB unused-JavaScript finding is where I'd start. That could reveal opportunities to improve performance without changing the experience or making the initial download heavier.
+
+## Me:
+
+I ran the lighthouse to give us numerical values on what we're going to see when it's launched, BUT I want to address these deficiencies before we actually launch it
+
+## You:
+
+Absolutely. That's the right way to approach this: **the Lighthouse results are our pre-launch acceptance criteria, not something we look at after the site goes live.**
+
+And I understand why you ran the test now. You want to know what visitors are likely to experience under constrained network and device conditions, while we still have time to correct the problems.
+
+I would treat the current results as our baseline and work toward:
+
+- Performance: 90+
+- Accessibility: 95–100
+- Best Practices: maintain 100
+- SEO: maintain 100
+
+Those are targets, not a reason to compromise the site's design or functionality. In particular, I don't want to achieve a better performance score by loading more content up front or making the site less usable on slower devices.
+
+I've now inspected the actual source on `main`, and there's a useful finding: **we don't need to replace the site's architecture to begin improving performance.**
+
+The current files are approximately:
+
+| Resource     | Source size |
+| ------------ | ----------- |
+| `index.html` | 183 KB      |
+| `script.js`  | 53 KB       |
+| `style.css`  | 44 KB       |
+
+The JavaScript is a single, locally hosted file. There is no large application framework or dependency bundle in the source. That makes Lighthouse's 1,409 KiB unused-JavaScript estimate something we need to investigate carefully rather than assume the portfolio itself contains 1.4 MB of unnecessary code.
+
+I also found a likely contributor that deserves attention: the HTML contains a substantial inline SVG animation for the career timeline. That is part of the initial document, so it can affect parsing and rendering even though it isn't a JavaScript dependency.
+
+### **1. I found a much more significant performance issue**
+
+167 KB of decorative SVG
+
+The career timeline's decorative binary animation accounts for:
+
+- **167 KB** of the 183 KB HTML document.
+- **2,496 individual SVG text elements** (`tspan`).
+- 80 SVG text elements, each containing many individually represented characters.
+
+That is a lot of markup for a decorative animation. It is also a likely contributor to Lighthouse's DOM-size and main-thread findings.
+
+I would preserve the animation's visual identity, but simplify how it is represented. We can substantially reduce its DOM footprint without removing the timeline or its interactive functionality.
+
+### **2. I found two definite accessibility problems**
+
+**Project filters use the wrong ARIA role.**
+
+The project filter container is marked `role="tablist"`, but its buttons aren't tabs. They're filter controls. A labeled `group` is the appropriate semantic structure.
+
+**The technology environment's definition list is incorrectly structured.**
+
+The generated markup puts an icon and an additional wrapper inside each definition-list group. Lighthouse is correctly identifying that the structure doesn't follow the expected definition-list pattern.
+
+Both are straightforward corrections.
+
+### **3. I found a likely contrast problem**
+
+The CMS appearance settings currently override the muted text color with `#8C8C8C`.
+
+**Current muted text contrast**
+
+On main background
+
+**4.27:1**
+
+On elevated background
+
+**3.49:1**
+
+WCAG AA requires 4.5:1 for normal-sized text.
+
+Changing the muted text color to a suitable lighter shade should address this without changing the overall dark theme.
+
+### **4. What about the 1.4 MB of unused JavaScript?**
+
+Our actual `script.js` is only 53 KB.
+
+It loads ten CMS JSON files, builds the page sections, and initializes the interactions. There isn't a 1.4 MB JavaScript framework sitting in the repository.
+
+That means we need to identify where Lighthouse is measuring that unused code. The extension warning makes a clean audit particularly important.
+
+### **Proposed correction order**
+
+| Priority | Work                                                    |
+| -------- | ------------------------------------------------------- |
+| 1        | Reduce the timeline SVG's markup and DOM footprint      |
+| 2        | Correct the ARIA and definition-list structures         |
+| 3        | Correct text contrast                                   |
+| 4        | Investigate JavaScript execution and resource loading   |
+| 5        | Investigate image delivery and render-blocking requests |
+| 6        | Resolve the heading hierarchy finding                   |
+| 7        | Run clean Lighthouse audits and compare results         |
+
+I haven't changed anything in this phase yet. I wanted to establish what is actually wrong in the source before making changes.
+
+**The important discovery is that the largest obvious optimization isn't removing JavaScript or sacrificing content. It's reducing the amount of decorative markup we're asking the browser to process.**
+
+That's exactly the kind of improvement we should be making before launch.
+
+## Me:
+
+Let's make those corrections, because this project is getting on every last one of my nerves today
+
+## You:
+
+Let's get it across the finish line one issue at a time. I know you've already put a lot of work into getting the site functioning the way you want, so I'm not going to start redesigning things or introduce a new framework.
+
+I'll make the targeted corrections we identified, preserve the existing visual design and interactions, and commit the changes directly to `main`. **No deployment.** Then we'll verify the source changes before moving on to another Lighthouse run.
+
+Okay. The first correction pass is committed to `main`. Four files changed, with no deployment.
+
+Committed
+
+&#x20;Latest commit: `7cc397f`
+
+### **What changed**
+
+**1. Timeline animation — major reduction**
+
+Before
+
+## **167.1 KB**
+
+SVG source characters
+
+After
+
+## **14.3 KB**
+
+SVG source characters
+
+**Reduction**
+
+## **91.4%**
+
+- Reduced from 2,496 individual `tspan` elements to zero.
+- Retained the timeline animation and visibility-based pause behavior.
+- Kept the timeline itself and its interactions intact.
+
+**2. Accessibility**
+
+- Corrected project filters from an inappropriate `tablist` to an accessible labeled group.
+- Corrected the technology environment's definition-list structure.
+- Changed the About section's group headings from `h4` to `h3`.
+
+**3. Color contrast**
+
+The muted text color is now `#B7B7B7`, synchronized between CSS and Decap's settings.
+
+| Background         | Contrast |
+| ------------------ | -------- |
+| Main `#2A2A2A`     | 7.16:1   |
+| Elevated `#383838` | 5.85:1   |
+
+Both exceed WCAG AA's 4.5:1 requirement for normal text.
+
+### **What remains**
+
+I haven't claimed the Lighthouse issues are all resolved. We still need to investigate:
+
+- JavaScript execution and the unused-JavaScript diagnostic.
+- Image delivery and LCP.
+- Render-blocking resources.
+- Any remaining accessibility findings.
+
+### **Next step**
+
+Pull the latest `main` into your local repository and refresh the portfolio. I particularly want to make sure the timeline animation still looks right after its markup reduction.
+
+Then we'll run Lighthouse again in a clean browser session and compare the numbers against the original baseline.
+
+We're making measurable changes now, not randomly changing things to chase a score. 🙂
