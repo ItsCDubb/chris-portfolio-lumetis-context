@@ -14990,3 +14990,200 @@ So let's test that specifically.
 Does the selection move to the next tab?
 
 That will tell us whether the keyboard interaction is working as intended.
+
+## Me:
+
+Good afternoon! Please read `Context.md` in the `chris-portfolio-lumetis-context` repo. We've already done a lot to address the accessibility issues; however, `ctrl + home` it still doesn't take me to the top of the screen. BUT I'm still able to tab to the back-to-top button & able to get that going. Does that help?
+
+## You:
+
+Good afternoon! Yes, that helps quite a bit. And it tells us something important: **the back-to-top button is reachable through keyboard navigation and actually works.** That's a positive accessibility result.
+
+There are two separate things to distinguish:
+
+- **Back-to-top accessibility:** If you can reach the button with `Tab`, see its focus indicator, and activate it with `Enter` or `Space`, that interaction is working.
+- `Ctrl + Home`**:** That's a separate browser/keyboard navigation behavior. Its failure doesn't automatically mean the website's accessibility implementation is broken.
+
+I wouldn't change the site just because that shortcut isn't working. Let's establish whether there's an actual page-navigation defect first.
+
+So, based on what you've described:
+
+- The page supports forward and backward keyboard navigation.
+- The back-to-top button is reachable by keyboard.
+- The button provides an alternative way to return to the top without using the trackpad.
+
+**I'd count that as a successful test of the back-to-top control.**
+
+One thing I want to avoid is treating `Ctrl + Home` as a website feature. It's a browser navigation shortcut. The website doesn't need to implement it separately when it already provides a working back-to-top control.
+
+I suggest we leave that alone for now and continue testing the actual accessibility features.
+
+The next thing I'd like to verify is the **How I Can Help** tabs. We haven't established whether the arrow-key navigation works yet. That's a more meaningful test of the changes we made. 😊
+
+## Me:
+
+`ctrl + home` didn't work on my Bluetooth keyboard, but it does work on my laptop keyboard
+
+## You:
+
+Ahh, that explains it! 😁
+
+So this isn't a portfolio problem at all. It's a difference between the two keyboards' handling of the `Ctrl + Home` key combination.
+
+- **Laptop keyboard:** Works correctly.
+- **Bluetooth keyboard:** Doesn't recognize or correctly send that combination.
+
+That confirms the browser shortcut works, and there's no reason to modify the portfolio to compensate for the Bluetooth keyboard.
+
+I'd consider this particular test resolved. We can keep focusing on the website's actual accessibility rather than chasing a hardware-specific issue. 👍
+
+## Me:
+
+Ok, so what's next? Well, at least that we can do before we upload it to Netlify
+
+## You:
+
+We've already covered a meaningful chunk of accessibility, so I'd move on to a **pre-deployment verification pass**. The goal is to catch anything that could break or behave differently once the portfolio is hosted.
+
+Here's the order I'd use:
+
+1. **Finish keyboard accessibility** — verify the About / How I Can Help tabs, project cards, dialogs, and media lightbox.
+2. **Test the contact form** — required fields, invalid entries, successful submission feedback, and fallback contact options. We can verify the front-end behavior locally; actual Netlify form handling comes later.
+3. **Check responsive layouts** — desktop, tablet, and mobile widths. Look for clipped content, awkward spacing, and controls that become difficult to use.
+4. **Check project content** — images, descriptions, links, status labels, and dialogs. Make sure the JSON content and what the site displays agree.
+5. **Check navigation and links** — internal navigation, external links, browser history, and page behavior.
+6. **Run a final technical check** — console errors, missing assets, broken paths, and anything that depends on the local development environment.
+
+We don't need to change anything just to change it. If something passes, we leave it alone.
+
+### **Let's finish keyboard accessibility first**
+
+We haven't confirmed one detail from the previous test.
+
+Go to **How I Can Help**, put keyboard focus on the tab group, and press the **Right Arrow** key.
+
+Does the selected tab change, with its corresponding content appearing?
+
+## Me:
+
+It does
+
+## YOu:
+
+Perfect. That confirms the **About / How I Can Help tab controls are keyboard-operable**. We'll leave that code alone. 👍
+
+Next, let's test the project cards and their dialogs.
+
+1. Navigate to the Projects section.
+2. Use **Tab** until a project card receives focus.
+3. Press **Enter**.
+
+Does the project details dialog open?
+
+## Me:
+
+It does
+
+## You:
+
+Excellent. That confirms the project cards can be opened using the keyboard, not just clicked.
+
+Let's test the dialog itself now:
+
+1. With the project details open, press **Escape**.
+2. Does the dialog close?
+3. Does keyboard focus return to the project card you opened?
+
+That second part matters: users shouldn't lose their place when closing a dialog.
+
+## Me:
+
+1-3, yes it does
+
+## You:
+
+Excellent. That's three important behaviors confirmed:
+
+- The dialog opens with the keyboard.
+- Escape closes it.
+- Focus returns to the original project card.
+
+That means the project dialog's keyboard interaction and focus restoration are working. No changes needed there.
+
+### **Next: Media gallery and lightbox**
+
+Let's check the image viewer.
+
+1. Navigate to the media gallery.
+2. Use Tab to focus an image or media thumbnail.
+3. Press Enter to open it.
+
+Does the enlarged media view open?
+
+## Me:
+
+1. Yes I can
+2. Yes I can
+3. No, not really. Escape closes it, but `enter` doesn't open the lightbox dialog
+
+## You:
+
+Got it. The gallery thumbnail can receive keyboard focus, but **Enter doesn't activate it**. That's a real keyboard-accessibility gap.
+
+The fact that Escape closes the lightbox tells us the close behavior works. We need to inspect how the thumbnails handle activation and make sure Enter—and ideally Space—open the same lightbox as a mouse click.
+
+I'll check the existing implementation before changing anything. No reason to rewrite a working lightbox just to fix its keyboard interaction.
+
+One distinction before we change anything: **if you click the same thumbnail with your mouse, does the lightbox open normally?**
+
+That will tell us whether we're dealing specifically with missing keyboard activation or a broader problem with the thumbnail itself.
+
+## Me:
+
+the `spacebar` opens the lightbox & `escape` closes it
+
+## You:
+
+Ah, that's good news! That means the lightbox is keyboard-operable:
+
+- **Spacebar:** Opens the lightbox.
+- **Escape:** Closes the lightbox.
+
+Enter not opening it is worth noting, but it isn't automatically a defect. A native button should support both Enter and Space; if the thumbnail is implemented as a different interactive element, the expected behavior may differ.
+
+Let's test one more thing: **when you close the lightbox with Escape, does focus return to the thumbnail you opened?**
+
+## Me:
+
+Yes it does
+
+## You:
+
+Excellent. That confirms the lightbox restores keyboard focus to the thumbnail that opened it. So that part of the test passes. 👍
+
+The one outstanding issue is that **Enter doesn't open the media thumbnail, but Space does.** I don't want to call that a defect without checking how the thumbnail is implemented.
+
+Next, I'll treat that as something to inspect in the source before changing anything. We can then move on to the contact form's validation and visible feedback.
+
+## Me:
+
+Doesn't the validation have to come from when I actually deploy the website?
+
+## You:
+
+You're right to distinguish between the two. **Netlify's form processing and server-side validation won't be testable until deployment.** But we can still test the client-side behavior locally.
+
+Here's the distinction:
+
+| Validation                          | Local testing | Requires deployment |
+| ----------------------------------- | ------------- | ------------------- |
+| Required fields                     | Yes           | No                  |
+| Email format                        | Yes           | No                  |
+| Character limits                    | Yes           | No                  |
+| Clear error messages                | Yes           | No                  |
+| Success/error feedback from Netlify | No            | Yes                 |
+| Actual form submission and delivery | No            | Yes                 |
+
+Since we're trying to finish everything possible before deploying, I'd suggest we **leave Netlify submission testing until deployment** and only address any obvious front-end issues locally.
+
+No need to spend time building a parallel validation system when Netlify will handle the actual submission.
