@@ -15187,3 +15187,359 @@ Here's the distinction:
 Since we're trying to finish everything possible before deploying, I'd suggest we **leave Netlify submission testing until deployment** and only address any obvious front-end issues locally.
 
 No need to spend time building a parallel validation system when Netlify will handle the actual submission.
+
+## Me:
+
+Sounds like a plan! Please read `Context.md` in the `chris-portfolio-lumetis-context` repo so you can get caught up on what's worked, what hasn't, & how we've dealt with those issues
+
+## You:
+
+I found the repository: [`ItsCDubb/chris-portfolio-lumetis-context`](https://github.com/ItsCDubb/chris-portfolio-lumetis-context?utm_source=chatgpt.com), and confirmed that `Context.md` is on `main`.
+
+I've started reviewing it. The important working rule is consistent with what we've been doing: **verify the existing implementation, test actual behavior, make focused changes, and leave working parts alone.** The portfolio is being built and tested locally; Netlify deployment remains a deliberate final step.
+
+I've reviewed the conversation history in `Context.md`, including the decisions, implementation work, problems, and corrections. Here's where I understand the project stands.
+
+### **1. The direction of the portfolio**
+
+This is **Chris Warren's professional portfolio**, not a Lumetis company website.
+
+The positioning we've established is:
+
+- **Chris Warren**
+- **Technology Coach & Consultant**
+- Experienced in software engineering, practical AI, and building systems that work.
+
+The site should communicate your experience and personality without feeling like a résumé or an exercise in self-promotion. You want visitors to understand what you know, what you've built, how you approach technology, and how they can work with you.
+
+The design direction remains:
+
+- Dark by default.
+- Charcoal background (`#2A2A2A`).
+- SF Pro typography with sensible fallbacks.
+- Green accent (`#0BA376`).
+- Modern, interactive presentation without unnecessary visual clutter.
+- Conversational writing that sounds like you.
+
+### **2. What we've built and decided**
+
+| Area              | Current direction                                                                                            |
+| ----------------- | ------------------------------------------------------------------------------------------------------------ |
+| Homepage          | Personal introduction and professional focus                                                                 |
+| My Journey        | Organic, upward-moving interactive career timeline                                                           |
+| My Work           | Image-based project cards with detailed pop-up views                                                         |
+| Project media     | Multiple screenshots and videos in a selectable gallery/lightbox                                             |
+| How I Can Help    | Tabbed presentation of your services                                                                         |
+| Beyond Technology | Tabs for Hobbies & Interests, My Technology Environment, Languages, and Development Languages & Technologies |
+| FAQ               | Retained as a planned feature; it shouldn't have been dropped without discussion                             |
+| Contact           | Professional contact form designed around the services and opportunities you offer                           |
+| CMS               | Decap CMS manages editable content and uploaded media                                                        |
+
+A few details matter particularly:
+
+- Project cards should initially show the image, not a description. The details belong in the pop-up.
+- Project status is displayed to visitors, not editable by visitors.
+- Status colors and pills have an established visual treatment.
+- Projects should support adding more information and media over time.
+- AI-assisted development tools belong in your project information where appropriate.
+- Your Linux and open-source environment is part of your professional identity, not something to hide in the fine print.
+- Decap's structure should make sense when you return to the site months later. The CMS should reflect the actual organization of the website.
+
+### **3. What we've accomplished technically**
+
+The site has evolved from a basic static portfolio into a static website with a content-management workflow.
+
+**Decap CMS is working locally.** You previously confirmed that you could access the content manager, see the eight content files, edit a portfolio entry, publish it, and see the change reflected on the website.
+
+The local services are currently:
+
+- Portfolio: `http://localhost:5500`
+- Decap CMS: `http://localhost:5000/admin`
+
+The GitHub repository is the shared source of truth. You keep your local copy synchronized so we can work against the same files without unnecessary ZIP transfers.
+
+The accessibility work is also substantial:
+
+- Improved text and button contrast.
+- Improved interactive-control boundaries and focus indicators.
+- Corrected project-card keyboard behavior.
+- Added selected-state information to project filters.
+- Improved dialog and lightbox focus restoration.
+- Removed automatic video playback in the enlarged viewer.
+- Improved reduced-motion behavior.
+- Corrected map labeling and scroll-to-top behavior.
+
+These changes were committed to `main`:
+
+- [Contrast improvements](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/95d75f02ad00310262cc854a3a58f6cefda2f190?utm_source=chatgpt.com)
+- [Keyboard accessibility](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/0667fb4a7b6dcae4740612e61d285d1c4f17ae78?utm_source=chatgpt.com)
+- [Reduced motion and focus](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/5a78e938243c073d078f142289bc6a75d2e725c0?utm_source=chatgpt.com)
+- [Map and scroll controls](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/d326c405ff4ce0a092db1e1ddc20f131a6b2abb0?utm_source=chatgpt.com)
+
+### **4. What hasn't worked, and what we've learned**
+
+There are some important lessons in the history.
+
+**Git branches:** We repeatedly created unnecessary feature branches, causing divergence, conflicts, and confusion between local and remote work. You've explicitly established that work should happen on `main`. You don't want a collection of unnecessary branches or competing sources of truth.
+
+**Local synchronization:** We had a situation where local work and GitHub had diverged, and the work you expected to see locally wasn't there. We eventually synchronized to the remote version. This is precisely why we need to inspect the current repository state before making changes.
+
+**Decap configuration:** We encountered missing configuration files, incorrect server working directories, and confusion between the CMS server and its proxy. Those issues were resolved, and you subsequently confirmed the CMS was working.
+
+**Design implementation:** There were several instances where we discussed and agreed on a design, but the implementation didn't actually reflect what we'd agreed. The different interpretation, don't make changes without inspecting the actual implementation, and don't claim something is finished just because the code was changed.
+
+### **5. Where we are right now**
+
+Confirmed working
+
+&#x20;Keyboard navigation tests
+
+Your recent hands-on testing confirmed:
+
+| Test                             | Result                     |
+| -------------------------------- | -------------------------- |
+| Back-to-top button               | Works                      |
+| How I Can Help tabs              | Arrow-key navigation works |
+| Project cards                    | Enter opens the dialog     |
+| Project dialog                   | Escape closes it           |
+| Project dialog focus restoration | Works                      |
+| Media thumbnail                  | Space opens the lightbox   |
+| Lightbox                         | Escape closes it           |
+| Lightbox focus restoration       | Works                      |
+
+The media thumbnail's Enter-key behavior remains something to inspect in the source. We shouldn't change it until we know how that control is implemented.
+
+The contact form's actual Netlify processing and delivery must wait until deployment. We've agreed not to introduce a separate validation system or spend time duplicating what Netlify will handle.
+
+### **6. How I'll approach the remaining work**
+
+I understand the workflow and constraints:
+
+1. Work from the actual `chris-portfolio-lumetis` repository.
+2. Use `main`; don't create another branch.
+3. Inspect the existing code before modifying anything.
+4. Make focused changes that preserve the decisions we've already made.
+5. Verify changes rather than assuming they work.
+6. Distinguish source-level checks from actual browser testing.
+7. Keep the work local until we're ready to deploy.
+8. Leave working features alone.
+
+**The next task is to inspect the media thumbnail implementation and resolve the Enter-key question if the source confirms a problem.** After that, we can continue the pre-deployment review with responsive layouts, project content, navigation, and local technical checks.
+
+I've got the project history and the reasoning behind the decisions now. We don't need to reinvent the plan or revisit decisions you've already made. 👍
+
+## Me:
+
+Ok, so how do we do that exactly?
+
+## You:
+
+We'll do it locally, one step at a time. No code changes until we've identified exactly what's happening.
+
+### **Step 1 — Open the portfolio source**
+
+Since your portfolio is already running at `http://localhost:5500`, we can use the browser's developer tools to inspect the media thumbnail.
+
+1. Open the portfolio in Chrome.
+2. Navigate to **My Work**.
+3. Open a project that has multiple screenshots.
+4. Right-click one of the screenshot thumbnails.
+5. Select **Inspect**.
+
+Chrome will open Developer Tools and highlight the corresponding HTML element.
+
+### **Step 2 — Identify the control**
+
+Look at the highlighted HTML in the Elements panel.
+
+I want to know whether the thumbnail is implemented as:
+
+- `<button>`
+- `<a>`
+- `<div>`
+- Something else
+
+**Don't change anything yet.**
+
+Tell me what tag you see around the thumbnail. If it's easier, copy the highlighted HTML element here.
+
+Then we'll inspect its event handling and determine why Space works but Enter doesn't. One small step at a time.
+
+## Me:
+
+Looks like a `<button>`
+
+## You:
+
+Good. That narrows it down.
+
+Since it's a native `<button>`, **Enter and Space should both activate it** in the browser. We shouldn't need custom keyboard handling.
+
+Let's check one thing before changing anything:
+
+1. In Chrome DevTools, with that button selected, look at the **Event Listeners** panel.
+2. Expand `click`.
+3. Tell me whether you see a click handler attached to the button or one of its parent elements.
+
+We're checking whether the button's activation is being handled differently than expected. No code changes yet.
+
+## Me:
+
+I see
+
+```
+handler: (event) => (...)
+once: false
+passive: falsoe
+useCapture: false
+
+```
+
+Not sure if that means anything
+
+## You:
+
+Yes, that tells us something useful. 🙂
+
+- `handler: (event) => (...)` — A JavaScript event handler is attached.
+- `once: false` — It remains attached after activation.
+- `passive: false` — The handler is allowed to call methods such as `preventDefault()`.
+- `useCapture: false` — It runs during the normal bubbling phase, not the capture phase.
+
+**The important part:** We know a click handler exists, but we don't yet know what it does.
+
+One more check: expand the `click` entry in Event Listeners. Does Chrome show the JavaScript filename and line number beside the handler? If so, tell me what they are.
+
+That should help us locate the actual code responsible for opening the lightbox.
+
+## Me:
+
+```
+Handler: (event) => (...)
+length: 1
+name: ""
+arrangements: (...)
+caller: (...)
+[[FunctionLocation]]: <unknown>
+[[Protoype]]: f <- symbolized ()
+
+```
+
+## You:
+
+That `[[FunctionLocation]]: <unknown>` is the interesting part. Chrome can see the handler, but it isn't exposing where the function originated.
+
+We have two useful facts now:
+
+- The thumbnail is a native `<button>`, so browser-native keyboard activation should support both Enter and Space.
+- A click handler is attached, but DevTools isn't identifying its source.
+
+Let's take a different route rather than chase DevTools metadata.
+
+**Can you right-click the selected button in the Elements panel and choose Copy → Copy outerHTML, then paste the result here?**
+
+That will let me inspect the button's actual markup, including its attributes and any accessibility-related properties. We'll work from the code rather than guess.
+
+## Me:
+
+<span class="project-gallery-video-placeholder" aria-hidden="true">▶<small>VIDEO</small></span>
+
+## You:
+
+Ah, that's the `<span>` inside the button, not the button's outer HTML. No problem.
+
+That span is just the decorative video placeholder, and `aria-hidden="true"` correctly keeps it out of the accessibility tree.
+
+Let's get the actual button:
+
+1. In DevTools, look at the HTML around that span.
+2. Find the opening `<button ...>` tag immediately above it.
+3. Right-click that `<button>` and select **Copy → Copy outerHTML**.
+4. Paste it here.
+
+I want to see the button itself, particularly its attributes and contents.
+
+## Me:
+
+<button class="is-active" type="button" data-gallery-index="0" aria-label="Show video 1: My Portfolio video 1" aria-pressed="true"><span class="project-gallery-video-placeholder" aria-hidden="true">▶<small>VIDEO</small></span></button>
+
+## You:
+
+Perfect. This gives us the actual markup, and the button itself looks correct.
+
+A few things we can establish:
+
+- `type="button"` is correct.
+- `aria-label` provides an accessible name.
+- `aria-pressed` communicates the selected state.
+- There are no custom keyboard event attributes on the button.
+
+**My suspicion now is that something in the JavaScript is interfering with the native Enter activation, rather than the button markup being wrong.**
+
+Let's do one targeted test.
+
+With that button selected in DevTools:
+
+1. Open the **Console** tab.
+2. Enter this:
+
+```
+$0.click()
+```
+
+3\. See whether the lightbox opens.
+
+Tell me what happens. This will help distinguish a problem with the click handler from a problem with keyboard activation.
+
+## Me:
+
+The lightbox itself didn't open, but the video refreshed
+
+## You:
+
+That's an important result. It tells us the button's click action is doing _something_, but it isn't opening the lightbox. Instead, the video refreshes.
+
+I want to be careful not to jump to the wrong conclusion here. We may have two separate issues:
+
+1. **Keyboard activation:** Enter isn't producing the expected lightbox behavior.
+2. **Gallery behavior:** A programmatic click refreshes the video rather than opening the lightbox.
+
+Let's inspect the actual gallery code now. I want to find the handler for `data-gallery-index` and see how it handles thumbnail clicks versus opening the lightbox.
+
+Can you paste the JavaScript filename or the relevant gallery event-handler code? We shouldn't change anything until we understand why the click is refreshing the video.
+
+## Me:
+
+I"m not sure what you mean exactly, but this was in the console immediately aftter the input you gave me `undefined`
+
+## You:
+
+No worries. The `undefined` result is actually normal here.
+
+`$0.click()` doesn't return a value. It simply tells the browser to simulate a click on the selected element. So `undefined` doesn't indicate an error.
+
+The fact that the video refreshed is more interesting, though.
+
+Let's simplify the next step. **I want to inspect the gallery's JavaScript, not have you dig through DevTools.**
+
+Can you tell me which JavaScript files are in the root of your portfolio project? A screenshot of the project folder in your file manager is fine.
+
+I'll identify the relevant file and walk you through exactly what to look for.
+
+## Me:
+
+Where would I get that, everything is controlled through Decap CMS & it's in the github repo `chris-portfolio-lumetis` but even still, I wouldn't know where to look locally
+
+## You:
+
+You don't need to find it locally, and you haven't done anything wrong. Decap CMS manages the portfolio's **content**; the gallery's behavior is controlled by the JavaScript in the GitHub repository.
+
+I should be doing the source-code investigation here, not sending you hunting through files you don't know where to find.
+
+I was able to access the repository's `main` branch and read its `README.md`. So we have access to the project itself.
+
+I haven't located the gallery's JavaScript yet, and I don't want to guess at filenames again.
+
+Here's what I'll do next: identify the repository's actual source-file structure, locate the gallery implementation, and trace why the video refreshes instead of opening the lightbox.
+
+**You don't need to do anything locally or in Decap CMS for this investigation.** No changes will be made until we understand the cause.
