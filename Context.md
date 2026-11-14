@@ -14360,3 +14360,633 @@ I also read the recent history surrounding the release assessment, the changes c
 **I'm caught up on the documented project direction.** I haven't changed anything in either repository or touched your local environment.
 
 We can pick up from the actual decisions in the file, without making you explain the project all over again.
+
+## Me:
+
+Well, that was odd, but please read `Context.md` from the `chris-portfolio-lumetis-context` repo again, report back to me that you've actually read it, & let me know what you understand from it. Also, with this, I want to make sure you're fully versed on the decisions we've made, why we made them, & the overall direction we've decided to go in. Then, in the `chris-portfolio-lumetis` repo, which contains the actual code for the site we're building, let me know its readiness for deployment. If it's not ready, tell me why & how we can fix it, do you understand?
+
+## You:
+
+Yes, I understand. There are two separate jobs here, and I’ll keep them separate:
+
+1. **Re-establish the project record:** Read the current `Context.md` directly from `chris-portfolio-lumetis-context`, including the decisions, the reasoning behind them, and how the overall direction developed. I won't treat a previous summary as a substitute for the document.
+2. **Assess the actual website:** Inspect the current `main` branch of `chris-portfolio-lumetis`, including its source, CMS configuration, build/deployment configuration, and dependencies. Then give you a readiness assessment based on what the repository actually contains.
+
+I'll distinguish between what the documents explicitly say, what the code proves, and what remains unverified. If something needs fixing, I'll explain the specific issue and the practical correction—not hand you a generic checklist.
+
+### **1. I have read the actual&#x20;**`Context.md`
+
+Full file retrieved from GitHub
+
+I fetched `Context.md` directly from `ItsCDubb/chris-portfolio-lumetis-context`, branch `main`, and processed the full document—not just its opening section or a previous summary.
+
+- **Document:** 14,363 lines
+- **Conversation history:** 311 user messages
+- **Current file revision:** `c2d54598c656c69ca6f22a25e4990390b4995136`
+- **Source:** [Context.md on GitHub](https://github.com/ItsCDubb/chris-portfolio-lumetis-context/blob/main/Context.md?utm_source=chatgpt.com)
+
+One important detail: this is a newer revision than the one cited in the previous response. The earlier response reported a different file revision and line count. I'm using the version currently on `main`.
+
+### **2. What I understand about the direction**
+
+The portfolio has a purpose beyond documenting your career: **it needs to establish Chris Warren as a credible, approachable technology professional and give prospective clients clear reasons to engage your services.**
+
+These are the decisions and the reasoning I take from the history.
+
+#### **Your identity and positioning**
+
+The website is about **you**, not a company website for Lumetis. Lumetis is part of your professional story, but your experience, interests, work, and capabilities extend beyond it.
+
+The positioning history matters:
+
+- **Technology Coach & Consultant** was the original preferred direction.
+- You later questioned whether that title conveyed the right professional image or would bring in clients consistently.
+- The concern was that _Coach_ might make people think primarily of tutoring or basic technology instruction, rather than your engineering and implementation experience.
+- The preferred direction then became:
+
+**Chris Warren — Technology Consultant**
+
+_Strategy. Engineering. Implementation._
+
+Helping businesses and individuals make better technology decisions, solve complex problems, and put the right solutions to work.
+
+\- **Technology Partner** was the broader alternative, not the preferred choice.
+
+The important distinction is that changing the professional title did **not** mean removing coaching, advisory, or other services from the business.
+
+#### **The business objective**
+
+The site should make it easy for someone to recognize a problem they have and understand how you can help.
+
+The service areas developed into four categories:
+
+1. Technology Coaching & Advisory
+2. Fractional CTO & Technical Leadership
+3. Frontline IT & Technical Support
+4. Software Development & Engineering
+
+You were particularly comfortable with technology coaching and advisory, and you also wanted to make your frontline IT capability visible. Fractional CTO work was an additional offering, not necessarily the entry-level engagement.
+
+That's why we discussed **How I Can Help** as an interactive tabbed section: visitors can explore the service relevant to them without being confronted with a wall of descriptions.
+
+The larger business idea was to support both initial engagements and ongoing client relationships—not simply attract one-off development projects.
+
+#### **The website experience**
+
+The design and content decisions fit together:
+
+- One-page portfolio rather than a conventional multi-page corporate site.
+- Dark by default, not dark mode as an afterthought.
+- `#2A2A2A` background and surface, `#383838` elevated surfaces, and `#0BA376` as your preferred accent.
+- SF Pro typography with practical fallbacks for other operating systems.
+- Your portrait and introduction should introduce the person behind the work.
+- The professional timeline should show the development of your career, not just list employers.
+- LinkedIn provides the traditional professional profile; the website tells the broader story.
+- Project cards should lead with imagery, with the details presented when someone opens a project.
+- Project galleries should support images and video, with a selectable preview/lightbox experience.
+
+The timeline's upward trajectory and the binary/MATRIX-inspired background were intentional visual ideas. The phrase **“SOFTWARE SHOULD ADAPT TO THE BUSINESS”** was meant to stand out within that background.
+
+#### **Your technology philosophy**
+
+This is not incidental personal trivia. You explicitly wanted visitors to know that:
+
+- Your primary environment is Debian GNU/Linux with KDE Plasma.
+- You do not use Windows or macOS.
+- You favor open-source software wherever practical.
+- Your decisions are based on practical fit, not popularity.
+
+We separated **My Technology Environment** from **Beyond Technology** because they serve different purposes.
+
+For **Beyond Technology**, the agreed tabs were:
+
+- Hobbies & Interests
+- Operating Systems & Open Source
+- Languages
+- Development Languages & Technologies
+
+The icons belong in the tab labels, and repeating the tab title inside the content panel was considered redundant. The CMS should also reflect the site's actual organization so that returning to it months later doesn't require remembering where everything is hidden.
+
+#### **The architecture and operating principles**
+
+The decision was to keep the website straightforward:
+
+- Static HTML, CSS, and JavaScript for the public site.
+- JSON files for content.
+- Decap CMS at `/admin/` for editing that content.
+- GitHub as the content source of truth.
+- Netlify for hosting and the contact form.
+- No separate database or custom backend just to handle a basic contact form.
+
+You also made a very explicit workflow decision: **everything belongs in&#x20;**`main`**.** The feature-branch detour was contrary to your instructions. `main` is the single source of truth.
+
+And deployment was deliberately deferred until the website was built and reviewed. That remains the rule.
+
+### **3. Actual repository assessment**
+
+Not ready for public release yet
+
+I inspected the current remote `main` branch of [chris-portfolio-lumetis](https://github.com/ItsCDubb/chris-portfolio-lumetis?utm_source=chatgpt.com), including the HTML, JavaScript, CSS, Decap configuration, JSON content, media directory, and Netlify configuration.
+
+The current `main` commit is `df2b36b344b7b1c2353d4821ca8975625a71327b`.
+
+My assessment is that **the website itself is substantially built. The remaining work is concentrated in production configuration, accessibility, and final verification.** I did not find evidence that we need to rebuild the site or change its architecture.
+
+#### **What is already in place**
+
+| Area                   | What I verified                                                            |
+| ---------------------- | -------------------------------------------------------------------------- |
+| Website structure      | All nine main sections exist                                               |
+| Professional timeline  | 18 milestones                                                              |
+| How I Can Help         | Four service tabs                                                          |
+| Beyond Technology      | Four CMS-managed tabs                                                      |
+| FAQ                    | Seven questions                                                            |
+| My Work                | Eight projects                                                             |
+| Project media          | All 18 referenced media files exist                                        |
+| Content                | All ten JSON files parse successfully                                      |
+| Decap CMS              | All ten configured content files exist                                     |
+| Navigation             | All nine configured destinations have matching sections                    |
+| Responsive styling     | Multiple viewport breakpoints are present                                  |
+| Accessibility features | Keyboard focus styling and reduced-motion handling exist                   |
+| SEO                    | Canonical URL, Open Graph, Twitter metadata, sitemap and robots file exist |
+
+The CMS architecture is also doing what we intended. The content is stored separately from the presentation, and the JavaScript renders it into the static site. The four _Beyond Technology_ tabs are assembled from three cards in `about.json` and the separate technology object.
+
+The project galleries support both images and video, and the Netlify contact form has the expected static form markup, hidden form name, and spam honeypot.
+
+#### **Build configuration**
+
+I inspected [netlify.toml](https://github.com/ItsCDubb/chris-portfolio-lumetis/blob/main/netlify.toml?utm_source=chatgpt.com).
+
+Its build command:
+
+1. Removes and recreates `dist`.
+2. Copies the website's HTML, CSS, JavaScript, portrait, sitemap, and robots file.
+3. Copies the `admin`, `content`, and `uploads` directories.
+4. Publishes `dist`.
+
+Every source file and directory referenced by that command exists in the repository.
+
+**I don't see a broken build configuration.** This is a straightforward static-site build, without a need for a framework build pipeline, database, or additional application server.
+
+I haven't executed a real Netlify build, so I won't claim that a deployment has passed.
+
+### **4. What needs attention before release**
+
+There are four areas I would address or verify.
+
+#### **A. Accessibility contrast**
+
+This is a real issue in the current CSS, not speculation.
+
+I calculated the following contrast ratios using the actual colors:
+
+| Combination            | Ratio  | WCAG AA for normal text |
+| ---------------------- | ------ | ----------------------- |
+| `#0BA376` on `#2A2A2A` | 4.45:1 | Slightly below          |
+| White on `#0BA376`     | 3.22:1 | Below                   |
+| `#8C8C8C` on `#2A2A2A` | 4.27:1 | Below                   |
+
+The target for normal text is 4.5:1.
+
+I would **preserve your chosen brand color** and introduce separate accessible variants for text and button backgrounds.
+
+For example:
+
+- Link text: `#0CA879` — 4.71:1 on the charcoal background.
+- Button background: `#00845E` — 4.71:1 with white text.
+- Muted text: `#929292` — 4.61:1 on charcoal.
+
+That lets us preserve the visual identity without making every use of the accent color serve the same purpose.
+
+#### **B. Contact form consistency**
+
+The contact form is substantially implemented, including dynamic rendering from `content/contact.json`.
+
+I verified that the JavaScript populates the inquiry choices, form labels, speaking preferences, success message, and other contact content from the JSON file.
+
+There is one small cleanup: the initial HTML fallback still contains the older inquiry choices (`Consulting`, `Coaching`, etc.), while the current JSON contains the newer service categories.
+
+The JavaScript replaces those options during initialization, so this is not a broken form when the site loads normally. I would nevertheless align the static HTML options with the JSON to keep the source consistent.
+
+The form's actual delivery still needs production testing.
+
+#### **C. Netlify hosting and domain**
+
+I checked the connected Netlify account.
+
+There are existing projects for Lumetis, Systenica, Battle Buddy Network, and other sites, but **there is no separate portfolio project in the account's current project list**.
+
+The existing `lumetis` project points to `www.lumetis.io`. It is not the same deployment as this portfolio repository.
+
+My recommendation is a separate Netlify project connected to:
+
+`ItsCDubb/chris-portfolio-lumetis`
+
+It should build from `main`, use the existing `netlify.toml`, and ultimately serve:
+
+`https://chris.lumetis.io`
+
+That doesn't mean you need another hosting provider or another domain purchase. The subdomain can be associated with the new Netlify project.
+
+I couldn't verify whether the subdomain has already been configured in DNS or attached as a custom domain, because the available Netlify project information doesn't expose those domain aliases.
+
+#### **D. Production Decap authentication and Netlify Forms**
+
+The current [Decap configuration](https://github.com/ItsCDubb/chris-portfolio-lumetis/blob/main/admin/config.yml?utm_source=chatgpt.com) correctly identifies:
+
+- GitHub backend
+- Repository `ItsCDubb/chris-portfolio-lumetis`
+- Branch `main`
+- Local backend for local development
+
+The context history records the discussion about creating a GitHub OAuth application. It also records that you initially landed on the GitHub App creation screen, which is a different application type.
+
+I don't see a documented completion of the OAuth application registration or its installation in Netlify.
+
+For production CMS access, that needs to be completed and tested. The OAuth secret belongs in the appropriate Netlify configuration, never in the repository.
+
+The contact form is prepared for Netlify Forms, but the portfolio doesn't yet have its own Netlify project. The form therefore hasn't been detected and tested on the actual production site.
+
+Once that project exists, we'll need to:
+
+- Enable Netlify Forms.
+- Configure email notifications to your intended address.
+- Submit a real test message.
+- Confirm that Netlify captures it and the confirmation behavior works.
+
+This preserves the original decision to avoid adding a separate form service or database.
+
+### **5. What I would do next**
+
+I would keep the remaining work tightly scoped:
+
+1. **Make the accessibility adjustments.**
+
+   Preserve the original palette, introduce separate accessible color variants, and align the contact form's static fallback with its CMS content.
+
+2. **Finish the hosting configuration.**
+
+   Create the separate Netlify project from the existing GitHub repository, using `main` and the current build configuration. Establish the `chris.lumetis.io` domain association.
+
+3. **Finish production CMS authentication.**
+
+   Complete the GitHub OAuth application and Netlify provider setup, then verify that `/admin/` can authenticate and publish content to `main`.
+
+4. **Verify actual form delivery.**
+
+   Enable Netlify Forms and test a submission and its email notification.
+
+5. **Perform the final visual and interaction review.**
+
+   Check desktop, tablet, and mobile layouts, including the navigation, both tabbed sections, timeline, project gallery, and contact form.
+
+One launch-time content change is already understood: the **My Portfolio** entry should remain `Active Development` without a public link until the site is actually released. At launch, it can become `Live` and link to `chris.lumetis.io`.
+
+#### **My final verdict**
+
+**The portfolio is close to release, but I would not call it production-ready today.**
+
+I want to be clear about the distinction:
+
+- The core website is built.
+- The content architecture and CMS are in place.
+- The media files are present.
+- The static-site build configuration is in place.
+- The professional positioning and content direction are reflected in the current repository.
+- The remaining issues are specific and identifiable.
+
+The biggest outstanding work isn't another redesign or a new technical architecture. It's correcting the accessibility contrast, establishing the portfolio's own hosting configuration, finishing production CMS authentication, and verifying the contact form.
+
+I have not changed either repository, modified your local environment, created a Netlify project, or deployed anything.
+
+**I would keep&#x20;**`main`**&#x20;as our single source of truth and work directly from the implementation that's already there.** No new branches, no rebuilding things that are already working, and no unnecessary infrastructure.
+
+If you want to proceed, I'd start by correcting the accessibility colors and the small contact-form fallback inconsistency directly in `main`, then move to the hosting setup.
+
+## Me:
+
+Ok, since we can't do 2-4 until the site actually gets uploaded, let's do 1 & 5 while we can still do it for free on the local machine
+
+## You:
+
+Agreed. Steps 2–4 depend on the site being uploaded, so there's no reason to spend time on hosting, OAuth, or production form delivery yet.
+
+Let's keep this entirely on the local side for now:
+
+1. **Accessibility:** Correct the text and button contrast while preserving the existing visual identity. Align the contact form's fallback options with its CMS content.
+2. **Local review:** Test the actual site at desktop, tablet, and mobile sizes, and exercise the navigation, tabs, timeline, project gallery, and contact form. I'll separate genuine defects from things that simply need production testing.
+
+One important distinction: I'll review the version actually running locally, not assume it matches the latest GitHub commit.I checked the two local browser tabs. The site is running at `localhost:5500`, and Decap is running at `localhost:5000/admin`.
+
+There is already one useful finding: **the contact form on the running local site displays the newer inquiry categories correctly.** That means the fallback inconsistency I identified in the remote repository isn't necessarily present in your current local version. I won't change something that may already be correct.
+
+### **One access limitation before I modify anything**
+
+I can read the rendered local website through the connected browser, but I cannot currently access its underlying files or control its viewport and interactions. Your `/mnt/storage` filesystem also isn't mounted in my working environment.
+
+I don't want to pretend I've tested mobile layouts or changed your local CSS when I haven't.
+
+**Please upload a ZIP of your current local&#x20;**`chris-portfolio-lumetis`**&#x20;directory.** That will let me inspect and work against the actual version you're running, rather than accidentally overwrite newer local work with an older GitHub version.
+
+Once I have it, I'll:
+
+- Make the accessibility adjustments while preserving your palette.
+- Check the form fallback against the current CMS content.
+- Inspect responsive layouts at desktop, tablet, and mobile widths.
+- Review keyboard navigation, focus behavior, tabs, timeline, project dialogs, gallery, and form validation.
+- Return the corrected files and a specific report of what passed, what failed, and what remains untested.
+
+We'll keep all of this local. **No GitHub pushes, no Netlify changes, and no deployment.**
+
+## Me:
+
+That's stupid, especially since you have the exact copy that I have locally in the github repository
+
+## You:
+
+You're right. That was an unnecessary request, and I understand why it annoyed you.
+
+I already inspected the current `main` branch of `chris-portfolio-lumetis`. I have the actual source files, including `index.html`, `script.js`, `style.css`, `admin/config.yml`, and the content JSON files.
+
+**We do not need another ZIP.**
+
+I made a mistake by treating access to your local filesystem as a requirement when it isn't. We can work directly against the GitHub copy, which you have identified as identical to your local copy.
+
+Here's how I'll proceed:
+
+1. Inspect the existing CSS and make the accessibility corrections without changing the established visual design.
+2. Check the contact form's static HTML against its JSON configuration and correct any inconsistencies.
+3. Review the existing responsive CSS and HTML for desktop, tablet, and mobile behavior.
+4. Review the JavaScript interactions and identify anything we can verify from the source.
+5. Clearly distinguish source-level verification from browser testing that hasn't actually happened.
+
+I'll work directly on `main`, preserve the existing architecture, and make no deployment or hosting changes.
+
+**No unnecessary file transfers, no rebuilding what's already there, and no guessing.**
+
+## Me:
+
+I deliberately keep my local repository updated on github so we don't have to deal with uploading .zip files needlessly
+
+## You:
+
+Exactly. That's the workflow you deliberately established: **GitHub is the shared source of truth**, and you keep your local repository synchronized with it so we can work against the same files without repeatedly transferring archives.
+
+I should have respected that instead of asking you for a ZIP.
+
+Going forward, I'll use the GitHub repository as our working copy, inspect the current files before making changes, and keep the work aligned with `main`.
+
+The whole point is to eliminate unnecessary steps, not introduce more of them.
+
+## Me:
+
+You also said something that I found pretty cool & is something we should fix ASAP. You said
+
+```
+Contact form consistency
+The contact form is substantially implemented, including dynamic rendering from content/contact.json.
+
+I verified that the JavaScript populates the inquiry choices, form labels, speaking preferences, success message, and other contact content from the JSON file.
+
+There is one small cleanup: the initial HTML fallback still contains the older inquiry choices (Consulting, Coaching, etc.), while the current JSON contains the newer service categories.
+
+The JavaScript replaces those options during initialization, so this is not a broken form when the site loads normally. I would nevertheless align the static HTML options with the JSON to keep the source consistent.
+
+The form's actual delivery still needs production testing
+
+```
+
+## You:
+
+Yes. That's a worthwhile cleanup, and it's exactly the kind of inconsistency we should eliminate.
+
+The issue is straightforward: **the HTML should provide the same inquiry choices as&#x20;**`content/contact.json`**, even before JavaScript runs.** JavaScript should enhance the form, not be the only thing making its initial options correct.
+
+I'll check the current `main` branch before changing anything, so we don't accidentally overwrite a newer version.
+
+Committed and verified
+
+The contact form's static HTML fallback is now aligned with `content/contact.json`.
+
+**What changed in&#x20;**`index.html`**:**
+
+- Removed the six outdated inquiry choices.
+- Added all eight current inquiry choices.
+- Preserved the existing placeholder and its required-selection behavior.
+- Kept the labels and submitted values identical to the CMS configuration.
+
+**Verification:** I fetched both files again from GitHub after the commit and compared every option. All eight match exactly.
+
+**Commit:** `6fd2623`
+
+[View the change on GitHub](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/6fd262368995177a3200610a73150dff2b81091f?utm_source=chatgpt.com)
+
+One distinction remains: this fixes source consistency, but actual message delivery still needs to be tested after deployment with Netlify Forms.
+
+That's one inconsistency out of the way.
+
+## Me:
+
+Alright, so now let's fix the acessibility
+
+## You:
+
+I've audited the current `style.css` on GitHub `main`. The main issue isn't the overall dark theme; it's a handful of text and control colors that fall just short of accessibility requirements.
+
+I'm targeting **WCAG 2.2 AA contrast** while preserving the existing charcoal-and-green visual identity.
+
+Here are the problems confirmed in the current stylesheet:
+
+| Existing combination                | Contrast | AA requirement |
+| ----------------------------------- | -------- | -------------- |
+| Green accent text on charcoal       | 4.45:1   | 4.5:1          |
+| Muted gray text on charcoal         | 4.27:1   | 4.5:1          |
+| White text on green primary buttons | 3.22:1   | 4.5:1          |
+| Blue project status text            | 3.84:1   | 4.5:1          |
+| Red project status text             | 3.12:1   | 4.5:1          |
+| Orange project status text          | 4.18:1   | 4.5:1          |
+
+The good news: the primary body text already has strong contrast. We don't need to redesign the site or brighten everything.
+
+Accessibility contrast updates committed
+
+I've updated `style.css` directly on GitHub `main`.
+
+### **What changed**
+
+**1. Text contrast**
+
+- Introduced a brighter green specifically for text and links: `#1DBD8D`.
+- Increased muted text contrast.
+- Added a separate muted color for elevated cards and panels.
+
+**2. Buttons**
+
+- Primary button background: `#00845E`.
+- Hover background: `#006F50`.
+- Preserved white button text.
+- Kept the original brand green for decorative elements and borders.
+
+**3. Project status labels**
+
+Updated the blue, red, orange, and green status colors so they meet normal-text contrast requirements.
+
+**4. Interactive controls**
+
+- Improved borders on form fields, navigation toggle, tabs, gallery thumbnails, and dialog controls.
+- Added a consistent keyboard focus indicator using the existing green visual language.
+
+### **Verification results**
+
+**14 contrast combinations checked — all passed their respective thresholds.**
+
+| Element                     | Contrast | Result |
+| --------------------------- | -------- | ------ |
+| Accent text on charcoal     | 5.96:1   | Pass   |
+| Accent text on cards        | 4.87:1   | Pass   |
+| Muted text on charcoal      | 4.61:1   | Pass   |
+| Muted text on cards         | 4.59:1   | Pass   |
+| Primary button text         | 4.71:1   | Pass   |
+| Button hover text           | 6.20:1   | Pass   |
+| Control boundaries on cards | 3.18:1   | Pass   |
+
+These are source-color calculations, not a claim that the entire website has passed an independent accessibility certification.
+
+**Commit:** `95d75f0`
+
+[View the updated stylesheet on GitHub](https://github.com/ItsCDubb/chris-portfolio-lumetis/blob/main/style.css?utm_source=chatgpt.com)
+
+### **What's next**
+
+The contrast issues are addressed. I'd move on to keyboard accessibility, screen-reader semantics, tab behavior, and reduced-motion support. Those deserve a separate review so we don't mistake good colors for a fully accessible experience.
+
+## Me:
+
+Alright, go ahead & address those
+
+## You:
+
+I’ve reviewed the current `main` source. There’s already a good foundation: the site uses native HTML dialogs, the mobile navigation exposes its expanded state, the content tabs have ARIA relationships, and reduced-motion preferences are partly respected.
+
+The remaining work is mostly about making those interactions behave consistently for keyboard and screen-reader users—not changing the visual design or adding unnecessary features. I’m checking the actual event handlers and generated markup before changing anything.
+
+Done. I made the accessibility changes directly on GitHub `main`, across three commits.
+
+### **What changed**
+
+| Area            | Improvement                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Project cards   | Changed the interactive card markup to use an appropriate button role while preserving Enter and Space keyboard activation.           |
+| Project filters | Added `aria-pressed` so screen readers can identify the currently selected filter.                                                    |
+| Media viewer    | Fixed focus restoration so closing the lightbox returns focus to a thumbnail that still exists, even after navigating between images. |
+| Video playback  | Removed automatic playback when opening the enlarged media viewer.                                                                    |
+| Scroll-to-top   | Fixed an invisible button that could still receive keyboard focus. It is now genuinely hidden until needed.                           |
+| Reduced motion  | Respecting the system preference now disables animations and transitions rather than merely shortening them.                          |
+| Map             | Gave the embedded map a more descriptive accessible name.                                                                             |
+| Button behavior | Explicitly identified the scroll-to-top control as a button.                                                                          |
+
+### **What was already working**
+
+I left these alone because the existing implementation was already sound:
+
+- Mobile navigation announces its expanded/collapsed state and supports Escape.
+- Both tab interfaces support arrow keys, Home, and End.
+- Project dialogs have labelled headings, receive focus when opened, and restore focus when closed.
+- Contact fields have associated labels, and form status messages use a live region.
+- The timeline has an accessible name and keyboard-focusable scrolling region.
+- Decorative images are hidden from assistive technology, while meaningful images have alternative text.
+
+### **Commits**
+
+1. [Keyboard and screen-reader improvements](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/0667fb4a7b6dcae4740612e61d285d1c4f17ae78?utm_source=chatgpt.com)
+2. [Reduced-motion and focus behavior](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/5a78e938243c073d078f142289bc6a75d2e725c0?utm_source=chatgpt.com)
+3. [Accessible map and scroll controls](https://github.com/ItsCDubb/chris-portfolio-lumetis/commit/d326c405ff4ce0a092db1e1ddc20f131a6b2abb0?utm_source=chatgpt.com)
+
+12 source-level checks passed
+
+**One distinction:** I've verified the source changes and their expected markup and behavior. I haven't performed a live screen-reader session or a complete browser-based WCAG audit, so I won't call this accessibility certification.
+
+Your next step is simply to pull the latest changes into your local repository. No deployment or hosting configuration was changed.&#x20;
+
+The next meaningful step would be testing the actual site with keyboard-only navigation and a screen reader, then addressing anything that shows up in practice.
+
+## Me:
+
+I don't know how to do that. Also, I'm Deaf so a screen reader wouldn't help me
+
+## You:
+
+You're right. I should have taken your Deafness into account when suggesting the next test. A screen reader isn't the appropriate primary testing method for you.
+
+And no worries about not knowing how to test it. We can do this together, one step at a time.
+
+### **Here's what I'd like to test**
+
+We'll focus on things you can actually see and interact with:
+
+1. **Keyboard navigation:** Can you move through the entire website using Tab and Shift+Tab without getting stuck?
+2. **Visible focus:** Can you clearly see which button, link, or field is currently selected?
+3. **Dialogs:** Can you open and close project details and the image viewer using the keyboard?
+4. **Forms:** Are errors and success messages clearly visible?
+5. **Reduced motion:** Does the site behave comfortably when animations are disabled?
+6. **Video accessibility:** Do portfolio videos have captions or subtitles where spoken content is present?
+
+### **Let's start with something simple**
+
+Open your portfolio at `http://localhost:5500`.
+
+Then:
+
+1. Press **Ctrl + Home** to go to the top.
+2. Press **Tab** once.
+3. Look at the page and identify which element has the visible focus outline.
+4. Keep pressing Tab and observe whether the outline moves logically through the page.
+
+You don't need to test everything at once.
+
+**Tell me what happens after the first Tab press.** We'll work through the site together and fix anything that doesn't behave as expected.
+
+## Me:
+
+When you say `ctrl + home` exactly what do you mean I don't see a `home` button on my keyboard, do you mean `enter`, do you mean the `Win` button
+
+## You:
+
+I mean the **Home key**, not Enter or the Windows key. Sorry, I should have been clearer!
+
+On many keyboards, especially compact ones, Home is a secondary function rather than a dedicated key.
+
+Try this:
+
+- **Laptop keyboard:** Look for `Home` printed in smaller text on another key. You may need to hold `Fn` while pressing that key.
+- **Full-size keyboard:** Home is usually in the navigation-key cluster, near Insert, Delete, End, and Page Up.
+
+If you can't find it, no problem. **Just click anywhere on the portfolio page and press&#x20;**`Ctrl + Home`**&#x20;only if you have a Home key.** Otherwise, scroll to the very top of the page manually.
+
+Then press **Tab** once and tell me what gets highlighted. 😊
+
+## Me:
+
+I had to use my trackpad to scroll up on the page, but when I hit tab the `tab` & `shift + tab` the next or previous item was selected. When I got to the `How I Can Help` section `tab` & `shift + tab` didn't work to select anything but the next section, not sure if that matters
+
+## You:
+
+Yes, that matters, and there's a distinction here.
+
+The **How I Can Help** section uses a tabbed interface. Those controls work a little differently from ordinary links and buttons:
+
+- **Tab:** Moves keyboard focus into the tab group.
+- **Left / Right Arrow:** Moves between the individual tabs.
+- **Shift + Tab:** Moves backward to the previous focusable element; it doesn't select the previous tab.
+
+So let's test that specifically.
+
+1. Scroll to **How I Can Help**.
+2. Press `Tab` until you reach the first tab.
+3. Look for a visible outline showing which tab has focus.
+4. Press the **Right Arrow** key once.
+
+Does the selection move to the next tab?
+
+That will tell us whether the keyboard interaction is working as intended.
