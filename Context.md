@@ -17524,3 +17524,661 @@ So the content itself is present and the Markdown structure after the Lighthouse
 The cleanest test is to put the entire pasted Lighthouse report inside a fenced code block. That tells Markdown to display it literally, without interpreting any of its HTML-like text.
 
 I would test that before changing anything else. It preserves the report exactly, doesn't require restructuring the document, and gives us a direct way to confirm whether Markdown parsing is responsible.
+
+## Me:
+
+Please read `Context.md` on `chris-portfolio-lumetis-context` so you're all caught up. But here's the Cliff's notes for it. We had an issue with the display of the local file in `Context.md`, so I created\`Context-2.md\` we found out we didn't need that after I put some escape characters around the HTML lines. Now we're fixing what's left from the lighthouse test I ran, then we're going to get back to the other stuff that we need to do before we launch the portfolio
+
+## You:
+
+I've read `Context.md` on `ItsCDubb/chris-portfolio-lumetis-context`, including the latest conversation history. I'm caught up.
+
+And your clarification updates the working state: **we no longer need&#x20;**`Context-2.md`**.** The local Markdown preview issue was resolved by escaping the HTML-like text, so there's no reason to maintain a second context file just for that.
+
+### **Where the portfolio stands**
+
+The project is still a static HTML/CSS/JavaScript site, with Decap CMS managing the JSON content. We're preserving the existing design and functionality, and deployment remains deferred until development, testing, and final review are complete.
+
+The latest performance work brought us here:
+
+| Lighthouse category | Latest score |
+| ------------------- | ------------ |
+| Performance         | 82           |
+| Accessibility       | 100          |
+| Best Practices      | 100          |
+| SEO                 | 100          |
+
+The major performance improvement was reducing Total Blocking Time from 1,180 ms to 0 ms.
+
+### **What we're working on now**
+
+The remaining issue from that Lighthouse run is **Cumulative Layout Shift (CLS) at 0.148**.
+
+We need to identify exactly which elements are moving during the initial page load before changing anything. The next evidence we need is under:
+
+**Lighthouse → Insights → Layout shift culprits**
+
+I want to preserve the work we've already done, avoid arbitrary layout changes, and fix the actual cause.
+
+### **What comes after Lighthouse**
+
+Once we've finished the remaining performance and accessibility review, we'll return to the outstanding portfolio work and complete the final review before launch.
+
+I'll use `Context.md` as our project reference going forward, respect the decisions already recorded there, and won't make you repeat work or revisit decisions we've already settled.
+
+**We're picking up where we left off, not starting over.**
+
+## Me:
+
+Please read `Context.md` on `chris-portfolio-lumetis-context` so you're all caught up. But here's the Cliff's notes for it. We had an issue with the display of the local file in `Context.md`, so I created\`Context-2.md\` we found out we didn't need that after I put some escape characters around the HTML lines. Now we're fixing what's left from the lighthouse test I ran, then we're going to get back to the other stuff that we need to do before we launch the portfolio
+
+## You:
+
+I've read `Context.md` on `ItsCDubb/chris-portfolio-lumetis-context`, including the latest conversation history. I'm caught up.
+
+And your clarification updates the working state: **we no longer need&#x20;**`Context-2.md`**.** The local Markdown preview issue was resolved by escaping the HTML-like text, so there's no reason to maintain a second context file just for that.
+
+### **Where the portfolio stands**
+
+The project is still a static HTML/CSS/JavaScript site, with Decap CMS managing the JSON content. We're preserving the existing design and functionality, and deployment remains deferred until development, testing, and final review are complete.
+
+The latest performance work brought us here:
+
+| Lighthouse category | Latest score |
+| ------------------- | ------------ |
+| Performance         | 82           |
+| Accessibility       | 100          |
+| Best Practices      | 100          |
+| SEO                 | 100          |
+
+The major performance improvement was reducing Total Blocking Time from 1,180 ms to 0 ms.
+
+### **What we're working on now**
+
+The remaining issue from that Lighthouse run is **Cumulative Layout Shift (CLS) at 0.148**.
+
+We need to identify exactly which elements are moving during the initial page load before changing anything. The next evidence we need is under:
+
+**Lighthouse → Insights → Layout shift culprits**
+
+I want to preserve the work we've already done, avoid arbitrary layout changes, and fix the actual cause.
+
+### **What comes after Lighthouse**
+
+Once we've finished the remaining performance and accessibility review, we'll return to the outstanding portfolio work and complete the final review before launch.
+
+I'll use `Context.md` as our project reference going forward, respect the decisions already recorded there, and won't make you repeat work or revisit decisions we've already settled.
+
+**We're picking up where we left off, not starting over.**
+
+## Me:
+
+So what do we need to do in order to make everything happen
+
+## You:
+
+We need to finish this in a controlled sequence, not keep making isolated tweaks and hoping the site is ready.
+
+The good news is that we're not starting from scratch. The portfolio is running locally, Decap CMS is working, the project entries have been developed, and the Lighthouse scores for Accessibility, Best Practices, and SEO are all at 100.
+
+I'd divide the remaining work into **four phases: finish the technical review, complete the portfolio experience, validate the content and interactions, and then prepare the launch.**
+
+### **Phase 1 — Finish the Lighthouse review**
+
+**First priority: resolve the CLS score of 0.148.**
+
+1. Open the latest Lighthouse report.
+2. Expand **Insights → Layout shift culprits**.
+3. Identify the exact elements responsible for the movement.
+4. Correct the underlying cause without introducing arbitrary minimum heights or changing the approved design.
+5. Run Lighthouse again and compare the results.
+
+Then we'll review the remaining performance opportunities:
+
+- Image delivery.
+- Render-blocking resources.
+- JavaScript and CSS optimization.
+- Browser caching.
+- DOM size and third-party resources.
+
+We won't automatically chase every diagnostic. We'll prioritize changes that produce a meaningful improvement without compromising functionality.
+
+### **Phase 2 — Complete the contact form**
+
+This is already fairly well defined. We need to implement the decisions we've made:
+
+| Area               | Required result                                                              |
+| ------------------ | ---------------------------------------------------------------------------- |
+| Layout             | Professional two-column desktop layout, single column on mobile              |
+| Introduction       | Present consulting, coaching, training, strategy, and speaking opportunities |
+| Inquiry type       | Selectable categories instead of a generic text field                        |
+| Speaking           | Virtual, in-person, or either                                                |
+| Virtual preference | Clearly communicate that virtual engagements are welcome and preferred       |
+| Submission         | Native HTML using Netlify Forms                                              |
+| Notifications      | Send to `me@lumetis.io` with a recognizable subject                          |
+| Success            | Display the personalized confirmation message                                |
+| Failure            | Preserve submitted information and display an error                          |
+
+We'll build and test the form locally. Actual Netlify form detection and notification delivery will need to be verified during the launch process.
+
+### **Phase 3 — Finish the portfolio itself**
+
+Once the technical work is settled, we'll review the complete visitor experience.
+
+- **Homepage:** Introduction, positioning, navigation, and overall presentation.
+- **About:** Make sure the story communicates who you are beyond Lumetis.
+- **My Journey:** Verify the timeline, its animation, and its behavior across screen sizes.
+- **Focus:** Confirm the five focus areas and their presentation.
+- **Portfolio:** Review project cards, images, filters, dialogs, and project details.
+- **Professional experience:** Verify the accuracy and consistency of the information.
+- **Contact:** Review the finished form and the complete inquiry experience.
+- **LinkedIn:** Verify the profile link and destination.
+
+We'll also check the content in Decap CMS so that what's displayed on the site accurately reflects what's stored in the JSON files.
+
+### **Phase 4 — Final testing and launch preparation**
+
+Before deployment, we'll run through the site as an actual visitor would.
+
+| Test          | What we're verifying                                     |
+| ------------- | -------------------------------------------------------- |
+| Desktop       | Layout, navigation, dialogs, and interactions            |
+| Mobile        | Responsive behavior and usability                        |
+| Keyboard      | Navigation, focus, dialogs, and form operation           |
+| Accessibility | Lighthouse and manual checks                             |
+| Performance   | Final Lighthouse measurements                            |
+| SEO           | Metadata, structured data, links, and indexing readiness |
+| CMS           | Content editing, saving, and publishing                  |
+| Assets        | Images, icons, downloads, and external links             |
+| Contact       | Netlify form detection and actual submission             |
+
+We'll also verify the Netlify site configuration, custom domain `chris.lumetis.io`, SSL, and notification settings.
+
+**The overall completion sequence**
+
+1. **Finish Lighthouse**
+
+   Resolve CLS and review meaningful performance opportunities.
+
+2. **Finish the contact form**
+
+   Implement the agreed design and Netlify integration.
+
+3. **Complete the portfolio**
+
+   Review content, visuals, projects, and interactions.
+
+4. **Final quality review**
+
+   Test desktop, mobile, accessibility, SEO, and CMS.
+
+5. **Prepare and launch**
+
+   Configure Netlify, verify the domain, deploy, and test production.
+
+Deployment remains deferred
+
+### **What we need to do right now**
+
+We should stay focused on the current Lighthouse issue.
+
+**The next action is to expand&#x20;**`Layout shift culprits`**&#x20;and inspect the affected elements.** Once we know what's moving, we can fix it and continue down the list.
+
+One thing I want to emphasize: we're not rebuilding the portfolio. We're finishing the one we've already built, preserving what works, and addressing what's actually left.
+
+## Me:
+
+Alright, let's make it happen then
+
+## You:
+
+Let's do it. We'll build out the **Epic Investments & Consulting** portfolio entry so it demonstrates the actual engineering work, the systems you put together, and the business functionality—not just that you built a website.
+
+Before I write the entry, I need to establish one thing accurately:
+
+**Were you responsible for the entire technical implementation—from the initial architecture and React frontend through the Supabase integration and administrative dashboard?**
+
+I don't want to understate your contribution or claim ownership of work you didn't do.
+
+## Me:
+
+I guess it doesn't matter that, that particular entry is done, we're going to continue to revisit it entirely & damn what we're working on which is the lighthouse errors
+
+## You:
+
+You're right. I lost the thread, and I shouldn't have redirected us to the portfolio content. **We're working on Lighthouse, and that's where we're staying.**
+
+Here's where we left off:
+
+- Performance: **82**
+- Accessibility: **100**
+- Best Practices: **100**
+- SEO: **100**
+- Total Blocking Time: **0 ms** — a substantial improvement.
+- Cumulative Layout Shift: **0.148** — the outstanding issue, above the 0.1 target.
+
+### **Next step: Find the source of the layout shift**
+
+In the latest Lighthouse report:
+
+1. Open **Insights**.
+2. Expand **Layout shift culprits**.
+3. Identify the elements Lighthouse lists and their individual layout shifts.
+
+Send me the details or a screenshot of that expanded section.
+
+We'll trace the actual cause, correct it without introducing arbitrary layout constraints, and rerun Lighthouse to verify the result. Then we'll move through the remaining performance findings.
+
+**No Epic revisions, no distractions. Lighthouse first.**
+
+## Me:
+
+This is the latest Lighthouse run ~20 seconds ago
+83
+Performance
+100
+Accessibility
+100
+Best Practices
+100
+SEO
+83
+FCP
++10
+LCP
++14
+TBT
++30
+CLS
++19
+SI
++10
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+1.1 s
+Largest Contentful Paint
+3.8 s
+Total Blocking Time
+30 ms
+Cumulative Layout Shift
+0.148
+Speed Index
+1.1 s
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Improve image delivery Est savings of 298 KiB
+Render-blocking requests Est savings of 170 ms
+Layout shift culprits
+LCP request discovery
+Network dependency tree
+Use efficient cache lifetimes Est savings of 13 KiB
+Document request latency Est savings of 20 KiB
+LCP breakdown
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Minify JavaScript Est savings of 11 KiB
+Reduce unused CSS Est savings of 18 KiB
+Page prevented back/forward cache restoration 1 failure reason
+Minify CSS Est savings of 7 KiB
+Avoid long main-thread tasks 5 long tasks found
+Avoid non-composited animations 1 animated element found
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (15)
+Show
+100
+Accessibility
+These checks highlight opportunities to improve the accessibility of your web app. Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so manual testing is also encouraged.
+Best practices
+Uses ARIA roles only on compatible elements
+These items highlight common accessibility best practices.
+Additional items to manually check (10)
+Show
+These items address areas which an automated testing tool cannot cover. Learn more in our guide on conducting an accessibility review.
+Passed audits (35)
+Show
+Not applicable (27)
+Show
+100
+Best Practices
+Trust and Safety
+Ensure CSP is effective against XSS attacks
+Use a strong HSTS policy
+Ensure proper origin isolation with COOP
+Mitigate clickjacking with XFO or CSP
+Mitigate DOM-based XSS with Trusted Types
+Browser Compatibility
+Baseline Features
+Passed audits (13)
+Show
+Not applicable (2)
+Show
+100
+SEO
+These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on Core Web Vitals. Learn more about Google Search Essentials.
+Additional items to manually check (1)
+Hide
+Structured data is valid
+Run these additional validators on your site to check additional SEO best practices.
+Passed audits (10)
+Show
+Captured at Nov 14, 2026, 8:41 PM CST
+Emulated Moto G Power with Lighthouse 13.5.0
+Single page session
+Initial page load
+Slow 4G throttling
+Using Chromium 157.0.0.0 with DevTools
+Generated by Lighthouse 13.5.0 | File an issue
+
+When I click on Insights for Layout shifts, I get
+Layout shifts occur when elements move absent any user interaction. Investigate the causes of layout shifts, such as elements being added, removed, or their fonts changing as the page loads.CLSUnscored
+Element
+Layout shift score
+Total
+0.148
+div#focus-card.focus.card
+0.148
+img
+Unsized image element
+
+## You:
+
+Excellent. We have the culprit now. Lighthouse has identified a specific element rather than just reporting a page-wide layout shift:
+
+- **Affected element:** `div#focus-card.focus.card`
+- **Layout shift score:** `0.148` — the entire reported CLS.
+- **Underlying issue:** an `img` inside that card has no reserved dimensions.
+
+That gives us a concrete target. The browser is laying out the Focus card before it knows how much space its image needs, so the image loading changes the layout.
+
+The fix should be to establish the image's dimensions or aspect ratio before it loads—not to impose an arbitrary minimum height on the entire card.
+
+I checked the current `main` branch of your portfolio repository, and there's an important discrepancy:
+
+The Focus card is currently rendered by `script.js` using inline SVG icons inside `<span class="focus-icon">` elements. There is **no image element in that renderer**.
+
+So I don't want to blindly add CSS to the Focus card and potentially change something that isn't causing the problem.
+
+### **Let's identify the actual image**
+
+On your local portfolio (`localhost:5500`):
+
+1. Open DevTools with `F12`.
+2. Select **Console**.
+3. Run this:
+
+```
+document.querySelector('#focus-card img')?.outerHTML
+```
+
+That will show us the exact image element Lighthouse is reporting. If it returns `undefined`, run:
+
+```
+document.querySelector('#focus-card').innerHTML
+```
+
+Send me the result.
+
+The distinction matters: we need to fix the image's missing dimensions at its source, not mask the resulting layout shift.
+
+## Me:
+
+document.querySelector('#focus-card img')?.outerHTML
+undefined
+document.querySelector('#focus-card').innerHTML
+'<p class="label accent">Focus</p><ul><li><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"></path></svg></span><span>Software Engineering</span></li><li><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.8"></circle><path d="m19.4 13.5 1.1.9-1.6 2.8-1.4-.5a7.8 7.8 0 0 1-1.5.9l-.2 1.5h-3.3l-.3-1.5a7.8 7.8 0 0 1-1.5-.9l-1.4.5-1.6-2.8 1.1-.9a7.5 7.5 0 0 1 0-1.8l-1.1-.9 1.6-2.8 1.4.5a7.8 7.8 0 0 1 1.5-.9l.3-1.5h3.3l.2 1.5a7.8 7.8 0 0 1 1.5.9l1.4-.5 1.6 2.8-1.1.9a7.5 7.5 0 0 1 0 1.8Z"></path></svg></span><span>Practical AI Solutions</span></li><li><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"></rect><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3M9 9h6v6H9z"></path></svg></span><span>Systems &amp; Automation</span></li><li><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.8 8.8c0 5.1-8.8 11-8.8 11s-8.8-5.9-8.8-11A4.8 4.8 0 0 1 12 6.1a4.8 4.8 0 0 1 8.8 2.7Z"></path></svg></span><span>Technology Consulting</span></li><li><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5.5-8 11-8 11S4 15.5 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.4"></circle></svg></span><span>Problem Solving</span></li></ul>'
+
+## You:
+
+That's useful. It confirms the current Focus card contains **five inline SVG icons and no&#x20;**`<img>`**&#x20;elements**. So the image Lighthouse reported isn't present in the card now.
+
+There are two possibilities worth distinguishing:
+
+1. An image existed in the DOM when Lighthouse captured the layout shift but isn't there now.
+2. An unsized image elsewhere on the page caused the Focus card to move, and Lighthouse attributed the shift to the card.
+
+Let's inspect the actual images in the page before changing anything.
+
+Run this in the same DevTools Console:
+
+```
+[...document.images].map(img => ({
+  src: img.currentSrc || img.src,
+  loaded: img.complete,
+  naturalSize: `${img.naturalWidth}x${img.naturalHeight}`,
+  renderedSize: `${img.getBoundingClientRect().width}x${img.getBoundingClientRect().height}`,
+  parent: img.parentElement?.id || img.parentElement?.className
+}))
+```
+
+Then run:
+
+```
+[...document.images].filter(img =>
+  !img.hasAttribute('width') || !img.hasAttribute('height')
+).map(img => ({
+  src: img.currentSrc || img.src,
+  width: img.getAttribute('width'),
+  height: img.getAttribute('height')
+}))
+```
+
+**Why these checks?** The first gives us every image and its actual rendered dimensions. The second identifies images without explicit HTML dimensions.
+
+Let's find the image Lighthouse is referring to before touching the CSS or JavaScript.
+
+## Me:
+
+[...document.images].map(img => ({
+src: img.currentSrc || img.src,
+loaded: img.complete,
+naturalSize: `${img.naturalWidth}x${img.naturalHeight}`,
+renderedSize: `${img.getBoundingClientRect().width}x${img.getBoundingClientRect().height}`,
+parent: img.parentElement?.id || img.parentElement?.className
+}))
+(9) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]0: {src: 'http://localhost:5500/chris.png', loaded: true, naturalSize: '1003x1003', renderedSize: '196x196', parent: 'portrait'}1: {src: 'http://localhost:5500/uploads/epic-real-estate-website-mockup.png', loaded: false, naturalSize: '0x0', renderedSize: '302.65625x170.234375', parent: 'project-card-media has-image'}2: {src: 'http://localhost:5500/uploads/lumo-generated-2026-11-11-10.11.png', loaded: false, naturalSize: '0x0', renderedSize: '302.671875x170.25', parent: 'project-card-media has-image'}3: {src: 'http://localhost:5500/uploads/lumetiscoverimage.png', loaded: false, naturalSize: '0x0', renderedSize: '302.65625x170.234375', parent: 'project-card-media has-image'}4: {src: 'http://localhost:5500/uploads/lumetissystemcoverimage.png', loaded: false, naturalSize: '0x0', renderedSize: '302.65625x170.234375', parent: 'project-card-media has-image'}5: {src: 'http://localhost:5500/uploads/warm-portfolio-workspace-setup.png', loaded: false, naturalSize: '0x0', renderedSize: '302.671875x170.25', parent: 'project-card-media has-image'}6: {src: 'http://localhost:5500/uploads/screenshot_20261111_172012.png', loaded: false, naturalSize: '0x0', renderedSize: '302.65625x170.234375', parent: 'project-card-media has-image'}7: {src: 'http://localhost:5500/uploads/screenshot_20261112_121055.png', loaded: false, naturalSize: '0x0', renderedSize: '302.65625x170.234375', parent: 'project-card-media has-image'}8: {src: 'http://localhost:5500/uploads/battle-buddy-network-workspace-mockup.png', loaded: false, naturalSize: '0x0', renderedSize: '302.671875x170.25', parent: 'project-card-media has-image'}length: 9[[Prototype]]: Array(0)
+[...document.images].filter(img =>
+!img.hasAttribute('width') || !img.hasAttribute('height')
+).map(img => ({
+src: img.currentSrc || img.src,
+width: img.getAttribute('width'),
+height: img.getAttribute('height')
+}))
+(9) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]0: {src: 'http://localhost:5500/chris.png', width: null, height: null}1: {src: 'http://localhost:5500/uploads/epic-real-estate-website-mockup.png', width: null, height: null}2: {src: 'http://localhost:5500/uploads/lumo-generated-2026-11-11-10.11.png', width: null, height: null}3: {src: 'http://localhost:5500/uploads/lumetiscoverimage.png', width: null, height: null}4: {src: 'http://localhost:5500/uploads/lumetissystemcoverimage.png', width: null, height: null}5: {src: 'http://localhost:5500/uploads/warm-portfolio-workspace-setup.png', width: null, height: null}6: {src: 'http://localhost:5500/uploads/screenshot_20261111_172012.png', width: null, height: null}7: {src: 'http://localhost:5500/uploads/screenshot_20261112_121055.png', width: null, height: null}8: {src: 'http://localhost:5500/uploads/battle-buddy-network-workspace-mockup.png', width: null, height: null}length: 9[[Prototype]]: Array(0)
+
+## You:
+
+That's useful. We have a much clearer picture now, and there's an important distinction here.
+
+**The Focus card does not contain an image.** Your earlier DOM inspection confirmed that. However, all nine images on the page are missing explicit `width` and `height` attributes.
+
+The project images are particularly interesting:
+
+- All eight project images currently report `loaded: false` and `naturalSize: 0x0`.
+- Despite that, their rendered dimensions are already approximately `303 × 170`.
+- Your portrait has loaded and is rendered at `196 × 196`.
+
+That tells us the project image containers are reserving space through CSS, even though the image elements themselves don't declare intrinsic dimensions.
+
+### **What I want to establish next**
+
+The Lighthouse attribution may be pointing to the Focus card because its position changes when images elsewhere load—not because the Focus card contains the offending image.
+
+Let's inspect the project image containers and their CSS sizing. Run this in the console:
+
+```
+[...document.querySelectorAll('.project-card-media')].map(el => ({
+  className: el.className,
+  width: el.getBoundingClientRect().width,
+  height: el.getBoundingClientRect().height,
+  aspectRatio: getComputedStyle(el).aspectRatio,
+  position: getComputedStyle(el).position,
+  overflow: getComputedStyle(el).overflow,
+  image: el.querySelector('img')?.outerHTML
+}))
+```
+
+**Why this matters:** If those containers reserve their dimensions before the images load, the project images are unlikely to be responsible for the shift. If they don't, we have a plausible cause to investigate.
+
+I don't want to change the Focus card CSS based on a Lighthouse attribution that doesn't match the actual DOM. Let's identify the element causing the shift first.
+
+## Me:
+
+[...document.querySelectorAll('.project-card-media')].map(el => ({
+className: el.className,
+width: el.getBoundingClientRect().width,
+height: el.getBoundingClientRect().height,
+aspectRatio: getComputedStyle(el).aspectRatio,
+position: getComputedStyle(el).position,
+overflow: getComputedStyle(el).overflow,
+image: el.querySelector('img')?.outerHTML
+}))
+(8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]0: {className: 'project-card-media has-image', width: 302.65625, height: 170.234375, aspectRatio: '16 / 9', position: 'relative', …}1: {className: 'project-card-media has-image', width: 302.671875, height: 170.25, aspectRatio: '16 / 9', position: 'relative', …}2: {className: 'project-card-media has-image', width: 302.65625, height: 170.234375, aspectRatio: '16 / 9', position: 'relative', …}3: {className: 'project-card-media has-image', width: 302.65625, height: 170.234375, aspectRatio: '16 / 9', position: 'relative', …}4: {className: 'project-card-media has-image', width: 302.671875, height: 170.25, aspectRatio: '16 / 9', position: 'relative', …}5: {className: 'project-card-media has-image', width: 302.65625, height: 170.234375, aspectRatio: '16 / 9', position: 'relative', …}6: {className: 'project-card-media has-image', width: 302.65625, height: 170.234375, aspectRatio: '16 / 9', position: 'relative', …}7: {className: 'project-card-media has-image', width: 302.671875, height: 170.25, aspectRatio: '16 / 9', position: 'relative', …}length: 8[[Prototype]]: Array(0)
+
+## You:
+
+Good. That confirms the project image containers are reserving their space correctly.
+
+All eight have:
+
+- `aspect-ratio: 16 / 9`
+- `position: relative`
+- Approximately 303 × 170 pixels of reserved space.
+
+So, **the project images are not currently demonstrating the missing-space problem we'd expect from an unsized image.** We shouldn't change their CSS.
+
+There is still one important candidate: the portrait image (`chris.png`). It has no explicit dimensions, and Lighthouse may be measuring a shift caused by its initial loading.
+
+### **Next check: the portrait container**
+
+Run this:
+
+```
+(() => {
+  const img = document.querySelector('#portrait img');
+  const parent = img?.parentElement;
+
+  return {
+    image: img?.outerHTML,
+    imageSize: img ? {
+      width: img.getBoundingClientRect().width,
+      height: img.getBoundingClientRect().height
+    } : null,
+    parent: parent ? {
+      id: parent.id,
+      className: parent.className,
+      width: parent.getBoundingClientRect().width,
+      height: parent.getBoundingClientRect().height
+    } : null
+  };
+})()
+```
+
+I want to verify whether the portrait's parent reserves its 196 × 196 space before the image loads. That will help us narrow down whether the image itself could be responsible for the layout shift attributed to Focus.
+
+## Me:
+
+(() => {
+const img = document.querySelector('#portrait img');
+const parent = img?.parentElement;
+
+return {
+image: img?.outerHTML,
+imageSize: img ? {
+width: img.getBoundingClientRect().width,
+height: img.getBoundingClientRect().height
+} : null,
+parent: parent ? {
+id: parent.id,
+className: parent.className,
+width: parent.getBoundingClientRect().width,
+height: parent.getBoundingClientRect().height
+} : null
+};
+})()
+
+## You:
+
+I see the console expression, but not its returned output. It looks like the result may not have been copied along with the command.
+
+Could you paste the object it returned? Specifically, I need the `imageSize` and `parent` dimensions to determine whether the portrait is reserving space correctly.
+
+## Me:
+
+(() => { const img = document.querySelector('#portrait img'); const parent = img?.parentElement; return { image: img?.outerHTML, imageSize: img ? { width: img.getBoundingClientRect().width, height: img.getBoundingClientRect().height } : null, parent: parent ? { id: parent.id, className: parent.className, width: parent.getBoundingClientRect().width, height: parent.getBoundingClientRect().height } : null }; })()
+
+1. _{image: undefined, imageSize: null, parent: null}_
+   1. **image**: undefined
+   2. **imageSize**: null
+   3. **parent**: null
+   4. [[Prototype]]: Object
+      1. **constructor**: _ƒ Object()_
+      2. **hasOwnProperty**: _ƒ hasOwnProperty()_
+      3. **isPrototypeOf**: _ƒ isPrototypeOf()_
+      4. **propertyIsEnumerable**: _ƒ propertyIsEnumerable()_
+      5. **toLocaleString**: _ƒ toLocaleString()_
+      6. **toString**: _ƒ toString()_
+      7. **valueOf**: _ƒ valueOf()_
+      8. **\_\_defineGetter\_\_**: _ƒ \_\_defineGetter\_\_()_
+      9. **\_\_defineSetter\_\_**: _ƒ \_\_defineSetter\_\_()_
+      10. **\_\_lookupGetter\_\_**: _ƒ \_\_lookupGetter\_\_()_
+      11. **\_\_lookupSetter\_\_**: _ƒ \_\_lookupSetter\_\_()_
+      12. **\_\_proto\_\_**: (...)
+      13. get \_\_proto\_\_: _ƒ \_\_proto\_\_()_
+      14. set \_\_proto\_\_: _ƒ \_\_proto\_\_()_
+
+## You:
+
+Ah, we found a selector mismatch. The earlier image inventory showed:
+
+```
+parent: 'portrait'
+```
+
+That means `portrait`**&#x20;is the ID of the image's parent**, but let's verify the actual markup rather than assume.
+
+Your last command searched for an image _inside_ `#portrait`. Try this instead:
+
+```
+(() => {
+  const el = document.querySelector('#portrait');
+
+  return {
+    tag: el?.tagName,
+    html: el?.outerHTML,
+    width: el?.getBoundingClientRect().width,
+    height: el?.getBoundingClientRect().height,
+    parent: el?.parentElement?.outerHTML.slice(0, 500)
+  };
+})()
+```
+
+That will tell us exactly what `#portrait` represents and whether its dimensions are reserved.
+
+We're narrowing this down without changing anything prematurely.
