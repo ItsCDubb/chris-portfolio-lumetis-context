@@ -19842,3 +19842,849 @@ I'm particularly interested in:
 4. **Performance score:** What did Lighthouse report?
 
 Send me those results. Then we'll tackle CSS delivery—the next item in our agreed order.
+
+## Me:
+
+Please read `Context.md` on the `chris-portfolio-lumetis-context` repo. I would like you to get caught up & remember where we were, what we were working on, & what we need to do next. Also, this is the LATEST Lighthouse report. I think we're trending in the right direction 83 -> 90, 90->95, 95->97
+CLS\
++25\
+SI\
++10\
+Performance\
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.\
+0–49\
+50–89\
+90–100\
+Final Screenshot\
+\
+Metrics\
+Expand view\
+First Contentful Paint\
+1.1 s\
+Largest Contentful Paint\
+2.6 s\
+Total Blocking Time\
+0 ms\
+Cumulative Layout Shift\
+0.017\
+Speed Index\
+1.1 s\
+View Treemap\
+Screenshot\
+Screenshot\
+Screenshot\
+Screenshot\
+Screenshot\
+Screenshot\
+Screenshot\
+Screenshot\
+Show audits relevant to:\
+\
+All\
+\
+FCP\
+\
+LCP\
+\
+TBT\
+\
+CLS\
+Insights\
+Render-blocking requests Est savings of 180 ms\
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.FCPLCPUnscored\
+URL\
+Transfer Size\
+Duration\
+localhost 1st party\
+43.6 KiB 300 ms\
+/style.css(localhost)\
+43.6 KiB\
+300 ms\
+Use efficient cache lifetimes Est savings of 13 KiB\
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.FCPLCPUnscored\
+Request\
+Cache TTL\
+Transfer Size\
+localhost 1st party\
+13 KiB\
+/fiveserver.js(localhost)\
+None\
+13 KiB\
+Improve image delivery Est savings of 27 KiB\
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeFCPLCPUnscored\
+URL\
+Resource Size\
+Est Savings\
+localhost 1st party\
+33.0 KiB 27.0 KiB\
+img\
+/chris.webp(localhost)\
+33.0 KiB\
+27.0 KiB\
+Increasing the image compression factor could improve this image's download size.\
+9.0 KiB\
+This image file is larger than it needs to be (384x384) for its displayed dimensions (192x192). Use responsive images to reduce the image download size.\
+24.8 KiB\
+Network dependency tree\
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored\
+Maximum critical path latency: 140 ms\
+Initial Navigation\
+http\://localhost:5500 - 71 ms, 30.03 KiB\
+/script.js(localhost) - 95 ms, 53.03 KiB\
+/content/site-settings.json(localhost) - 140 ms, 2.71 KiB\
+/content/contact.json(localhost) - 139 ms, 3.44 KiB\
+/content/location.json(localhost) - 139 ms, 0.58 KiB\
+/content/faq.json(localhost) - 136 ms, 2.62 KiB\
+/content/linux.json(localhost) - 135 ms, 1.52 KiB\
+/content/help.json(localhost) - 132 ms, 3.27 KiB\
+/content/views.json(localhost) - 131 ms, 1.31 KiB\
+/content/about.json(localhost) - 126 ms, 5.63 KiB\
+/content/journey.json(localhost) - 122 ms, 3.68 KiB\
+/content/projects.json(localhost) - 117 ms, 21.39 KiB\
+/style.css(localhost) - 73 ms, 43.58 KiB\
+Preconnected origins\
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.\
+no origins were preconnected\
+Preconnect candidates\
+Add preconnect hints to your most important origins, but try to use no more than 4.\
+No additional origins are good candidates for preconnecting\
+Document request latency Est savings of 20 KiB\
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.FCPLCPUnscored\
+Avoids redirects\
+Server responds quickly (observed 1 ms)\
+No compression applied\
+Layout shift culprits\
+Layout shifts occur when elements move absent any user interaction. Investigate the causes of layout shifts, such as elements being added, removed, or their fonts changing as the page loads.CLSUnscored\
+Element\
+Layout shift score\
+Total\
+0.017\
+div#focus-card.focus.card\
+0.017\
+LCP breakdown\
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored\
+Subpart\
+Duration\
+Time to first byte\
+10 ms\
+Element render delay\
+120 ms\
+p#hero-lead.lead\
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.\
+Diagnostics\
+Minify CSS Est savings of 7 KiB\
+Minifying CSS files can reduce network payload sizes. Learn how to minify CSS.FCPLCPUnscored\
+URL\
+Transfer Size\
+Est Savings\
+localhost 1st party\
+43.6 KiB 6.9 KiB\
+/style.css(localhost)\
+43.6 KiB\
+6.9 KiB\
+Minify JavaScript Est savings of 11 KiB\
+Minifying JavaScript files can reduce payload sizes and script parse time. Learn how to minify JavaScript.FCPLCPUnscored\
+URL\
+Transfer Size\
+Est Savings\
+localhost 1st party\
+52.7 KiB 11.5 KiB\
+/script.js(localhost)\
+52.7 KiB\
+11.5 KiB\
+Reduce unused CSS Est savings of 18 KiB\
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.FCPLCPUnscored\
+URL\
+Transfer Size\
+Est Savings\
+localhost 1st party\
+43.2 KiB 18.3 KiB\
+/style.css(localhost)\
+43.2 KiB\
+18.3 KiB\
+Avoid non-composited animations 1 animated element found\
+Animations which are not composited can be janky and increase CLS. Learn how to avoid non-composited animationsCLSUnscored\
+Element\
+Name\
+path.journey-path-progress\
+Unsupported CSS Property: stroke-dashoffset\
+stroke-dashoffset\
+Avoid long main-thread tasks 2 long tasks found\
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. Learn how to avoid long main-thread tasksTBTUnscored\
+URL\
+Start Time\
+Duration\
+localhost 1st party\
+99 ms\
+http\://localhost:5500\
+844 ms\
+99 ms\
+Unattributable\
+93 ms\
+Unattributable\
+751 ms\
+93 ms\
+More information about the performance of your application. These numbers don't directly affect the Performance score.\
+Passed audits (17)
+
+## You:
+
+Yes — we're trending in the right direction, and the latest result is a meaningful improvement.
+
+97 Performance
+
+| Metric                   | Latest result |
+| ------------------------ | ------------- |
+| First Contentful Paint   | 1.1 s         |
+| Largest Contentful Paint | **2.6 s**     |
+| Total Blocking Time      | **0 ms**      |
+| Cumulative Layout Shift  | **0.017**     |
+| Speed Index              | 1.1 s         |
+
+The score progression you reported — **83 → 90 → 95 → 97** — tells the story. We've improved LCP from 3.8 seconds to 2.6 seconds, while keeping blocking time at zero and CLS very low.
+
+And importantly, we achieved that without redesigning the site or adding dependencies.
+
+I also reread the portfolio project's `Context.md` on the context repository. We're still following the agreed plan: finish performance work, run the final checks, review the site and CMS, and only then consider deployment. Nothing gets deployed without your authorization.
+
+## **Where we are now**
+
+The responsive portrait change is in place: `index.html` offers both the 192px and 384px WebP images through `srcset`. One thing to note: Lighthouse is still reporting the same 27 KiB of potential image savings. That doesn't necessarily mean `srcset` is failing; the browser may be selecting the larger candidate for a high-density display. We can verify which file the browser actually selects rather than guessing.
+
+## **Next: CSS delivery**
+
+I pulled the current `style.css` from `main` and confirmed the page still loads one stylesheet.
+
+The latest report gives us three CSS-related figures:
+
+| Finding                        | Current result |
+| ------------------------------ | -------------- |
+| Stylesheet transfer            | 43.6 KiB       |
+| Estimated minification savings | 6.9 KiB        |
+| Estimated unused CSS           | 18.3 KiB       |
+| Render-blocking delay          | 180 ms         |
+
+I noticed the stylesheet has accumulated several rounds of refinements. Some selectors are defined more than once, particularly around the About tabs, Focus section, and portrait. That's worth examining.
+
+**Here's how I'd approach it:**
+
+1. Audit the existing CSS against the HTML and JavaScript.
+2. Identify genuine duplicate or superseded rules.
+3. Consolidate only what we can verify is safe.
+4. Preserve styles used by interactive elements, dialogs, galleries, tabs, and responsive layouts.
+5. Run Lighthouse again and check that accessibility and the visual presentation haven't regressed.
+
+I don't want to remove 18 KiB just because Lighthouse calls it unused. A stylesheet rule for a dialog or tab might not be used in the initial page state but still be essential when someone interacts with the site.
+
+## **After CSS**
+
+We're getting close to the finish line. The remaining work is:
+
+- Final performance verification.
+- Functional review across desktop and mobile.
+- Check the Decap CMS and content publishing workflow.
+- Verify the contact form's launch configuration.
+- Final review, then deployment only with your approval.
+
+**My take:** 97 is a strong result. Let's see whether we can improve CSS delivery without compromising anything, but we're not going to sacrifice a working portfolio to chase 100.
+
+We're back on the CSS work now. No redesign, no framework changes, and no unnecessary refactoring. 👌
+
+## Me:
+
+Then let's see if we can make it a thing, I'm excited
+
+## You:
+
+I found a safe first cleanup: the **About section has accumulated multiple overlapping CSS blocks** as its layout evolved from a grid into tabs. The final rules override much of the earlier styling, and some responsive rules still target the old grid layout.
+
+I'm going to consolidate that section into one authoritative set of rules, preserve its current appearance and breakpoints, and leave the interactive and animation-heavy sections alone for now. This is a low-risk cleanup before we consider more aggressive CSS optimization.## CSS cleanup committed
+
+Committed to main
+
+I consolidated the About section and removed obsolete responsive rules.
+
+- Removed the old three-column grid styling that the tab layout replaced.
+- Combined repeated tab and panel declarations.
+- Preserved the existing four-column desktop and two-column mobile tab layouts.
+- Removed redundant breakpoint rules.
+- Preserved the panel visibility behavior and styling.
+
+Commit: `6d1fa3d` · CSS reduced from 44,242 to 43,488 bytes · 32 lines removed
+
+That's a cleanup, not yet a major performance optimization. I deliberately avoided stripping rules that might support interactive states.
+
+### **Let's test it**
+
+Pull the changes locally:
+
+```
+git pull origin main
+```
+
+Then:
+
+1. Refresh the portfolio.
+2. Check the About tabs on desktop and mobile.
+3. Open a few panels and make sure their content and layout are intact.
+4. Run Lighthouse under the same conditions as before.
+
+Send me the new report. We'll compare the score, LCP, and CSS findings against the previous 97.
+
+We're keeping the improvements measurable. No changes just for the sake of changing things. 🚀
+
+## Me:
+
+& we regressed from 97 to 95, the bad part? I don't even understand why
+95
+Performance
+100
+Accessibility
+100
+Best Practices
+100
+SEO
+95
+FCP
++10
+LCP
++20
+TBT
++30
+CLS
++25
+SI
++10
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+1.1 s
+Largest Contentful Paint
+2.9 s
+Total Blocking Time
+0 ms
+Cumulative Layout Shift
+0.017
+Speed Index
+1.1 s
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Render-blocking requests Est savings of 180 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.FCPLCPUnscored
+URL
+Transfer Size
+Duration
+localhost 1st party
+42.8 KiB 300 ms
+/style.css(localhost)
+42.8 KiB
+300 ms
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 126 ms
+Initial Navigation
+http://localhost:5500 - 54 ms, 30.03 KiB
+/script.js(localhost) - 78 ms, 53.03 KiB
+/content/site-settings.json(localhost) - 126 ms, 2.71 KiB
+/content/contact.json(localhost) - 123 ms, 3.44 KiB
+/content/location.json(localhost) - 123 ms, 0.58 KiB
+/content/faq.json(localhost) - 122 ms, 2.62 KiB
+/content/linux.json(localhost) - 122 ms, 1.52 KiB
+/content/help.json(localhost) - 120 ms, 3.27 KiB
+/content/views.json(localhost) - 119 ms, 1.31 KiB
+/content/about.json(localhost) - 112 ms, 5.63 KiB
+/content/journey.json(localhost) - 109 ms, 3.68 KiB
+/content/projects.json(localhost) - 99 ms, 21.39 KiB
+/style.css(localhost) - 54 ms, 42.84 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Use efficient cache lifetimes Est savings of 13 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.FCPLCPUnscored
+Request
+Cache TTL
+Transfer Size
+localhost 1st party
+13 KiB
+/fiveserver.js(localhost)
+None
+13 KiB
+Document request latency Est savings of 20 KiB
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.FCPLCPUnscored
+Avoids redirects
+Server responds quickly (observed 1 ms)
+No compression applied
+Improve image delivery Est savings of 27 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeFCPLCPUnscored
+URL
+Resource Size
+Est Savings
+localhost 1st party
+33.0 KiB 27.0 KiB
+img
+/chris.webp(localhost)
+33.0 KiB
+27.0 KiB
+Increasing the image compression factor could improve this image's download size.
+9.0 KiB
+This image file is larger than it needs to be (384x384) for its displayed dimensions (192x192). Use responsive images to reduce the image download size.
+24.8 KiB
+Layout shift culprits
+Layout shifts occur when elements move absent any user interaction. Investigate the causes of layout shifts, such as elements being added, removed, or their fonts changing as the page loads.CLSUnscored
+Element
+Layout shift score
+Total
+0.017
+div#focus-card.focus.card
+0.017
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+10 ms
+Element render delay
+120 ms
+p#hero-lead.lead
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Reduce unused CSS Est savings of 18 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.FCPLCPUnscored
+URL
+Transfer Size
+Est Savings
+localhost 1st party
+42.5 KiB 18.1 KiB
+/style.css(localhost)
+42.5 KiB
+18.1 KiB
+Minify CSS Est savings of 7 KiB
+Minifying CSS files can reduce network payload sizes. Learn how to minify CSS.FCPLCPUnscored
+URL
+Transfer Size
+Est Savings
+localhost 1st party
+42.8 KiB 6.7 KiB
+/style.css(localhost)
+42.8 KiB
+6.7 KiB
+Minify JavaScript Est savings of 11 KiB
+Minifying JavaScript files can reduce payload sizes and script parse time. Learn how to minify JavaScript.FCPLCPUnscored
+URL
+Transfer Size
+Est Savings
+localhost 1st party
+52.7 KiB 11.5 KiB
+/script.js(localhost)
+52.7 KiB
+11.5 KiB
+Avoid non-composited animations 1 animated element found
+Animations which are not composited can be janky and increase CLS. Learn how to avoid non-composited animationsCLSUnscored
+Element
+Name
+path.journey-path-progress
+Unsupported CSS Property: stroke-dashoffset
+stroke-dashoffset
+Avoid long main-thread tasks 1 long task found
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. Learn how to avoid long main-thread tasksTBTUnscored
+URL
+Start Time
+Duration
+localhost 1st party
+99 ms
+http://localhost:5500
+751 ms
+99 ms
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+Passed audits (17)
+Hide
+Optimize DOM size
+Duplicated JavaScript
+Font display
+Forced reflow
+INP breakdown
+LCP request discovery
+Legacy JavaScript
+Modern HTTP
+3rd parties
+Optimize viewport for mobile
+Reduce unused JavaScript
+Avoids enormous network payloads Total size was 247 KiB
+User Timing marks and measures
+JavaScript execution time 0.1 s
+Minimizes main-thread work 0.7 s
+Image elements have explicit width and height
+Page didn't prevent back/forward cache restoration
+
+## You:
+
+Yeah, I can see why that's frustrating, especially after reaching 97. But looking at the actual metrics, **we haven't necessarily regressed in the underlying performance of the site.** The score dropped two points, while one important metric got worse and the others stayed stable.
+
+Here's the comparison:
+
+| Metric      | Previous | Current | Change    |
+| ----------- | -------- | ------- | --------- |
+| Performance | 97       | 95      | -2        |
+| FCP         | 1.1 s    | 1.1 s   | No change |
+| LCP         | 2.6 s    | 2.9 s   | +0.3 s    |
+| TBT         | 0 ms     | 0 ms    | No change |
+| CLS         | 0.017    | 0.017   | No change |
+| Speed Index | 1.1 s    | 1.1 s   | No change |
+
+**The only measured metric that regressed is LCP.** Everything else is holding steady.
+
+And there's something important here: the CSS cleanup reduced the stylesheet by 754 bytes, but Lighthouse still reports essentially the same CSS delivery problem. That cleanup wasn't a meaningful performance optimization by itself.
+
+### **Why I don't think the CSS change caused it**
+
+A few details in this report are telling:
+
+- The stylesheet dropped from roughly 43.6 KiB to 42.8 KiB. The cleanup is reflected.
+- The critical network path improved from 140 ms to 126 ms.
+- The LCP breakdown still reports 10 ms TTFB and 120 ms element render delay.
+- The LCP element is still `p#hero-lead.lead`, **not the portrait or the Focus card**.
+
+So the report doesn't show evidence that the CSS cleanup made the page slower. The 300 ms LCP difference could simply be Lighthouse run-to-run variation under simulated mobile throttling.
+
+### **Two things worth understanding**
+
+**1. The image warning isn't necessarily a real problem.**
+
+Your responsive image offers 192px and 384px versions. Lighthouse is reporting that the browser downloaded the 384px version. On a device with a 2x pixel density, that's reasonable for an image displayed at approximately 192 CSS pixels. We shouldn't automatically force the smaller image.
+
+**2. The CSS warnings are still there.**
+
+Lighthouse estimates:
+
+- 180 ms savings from render-blocking CSS.
+- 18.1 KiB savings from unused CSS.
+- 6.7 KiB savings from minifying CSS.
+
+Those are opportunities, not guaranteed improvements. In particular, unused CSS can include styles needed later for dialogs, tabs, and responsive layouts.
+
+### **What I'd do next**
+
+I would **not change anything else yet**.
+
+Run Lighthouse two more times under the same conditions. If LCP repeatedly comes back around 2.9 seconds, we'll investigate. If it moves back toward 2.6, we've established that the two-point difference was probably measurement variation.
+
+We're at 95 with 100s everywhere else. That's a very good result. I don't want to sacrifice maintainability or introduce fragile loading tricks just to chase two points.
+
+## Me:
+
+This is why I'm confused, we literally made 0 changes
+
+96
+FCP
++10
+LCP
++21
+TBT
++30
+CLS
++25
+SI
++10
+Performance
+Values are estimated and may vary. The performance score is calculated directly from these metrics.See calculator.
+0–49
+50–89
+90–100
+Final Screenshot
+
+Metrics
+Expand view
+First Contentful Paint
+1.1 s
+Largest Contentful Paint
+2.7 s
+Total Blocking Time
+0 ms
+Cumulative Layout Shift
+0.017
+Speed Index
+1.1 s
+View Treemap
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Screenshot
+Show audits relevant to:
+
+All
+
+FCP
+
+LCP
+
+TBT
+
+CLS
+Insights
+Render-blocking requests Est savings of 190 ms
+Requests are blocking the page's initial render, which may delay LCP. Deferring or inlining can move these network requests out of the critical path.FCPLCPUnscored
+URL
+Transfer Size
+Duration
+localhost 1st party
+42.8 KiB 300 ms
+/style.css(localhost)
+42.8 KiB
+300 ms
+Improve image delivery Est savings of 27 KiB
+Reducing the download time of images can improve the perceived load time of the page and LCP. Learn more about optimizing image sizeFCPLCPUnscored
+URL
+Resource Size
+Est Savings
+localhost 1st party
+33.0 KiB 27.0 KiB
+img
+/chris.webp(localhost)
+33.0 KiB
+27.0 KiB
+Increasing the image compression factor could improve this image's download size.
+9.0 KiB
+This image file is larger than it needs to be (384x384) for its displayed dimensions (192x192). Use responsive images to reduce the image download size.
+24.8 KiB
+Network dependency tree
+Avoid chaining critical requests by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.LCPUnscored
+Maximum critical path latency: 109 ms
+Initial Navigation
+http://localhost:5500 - 41 ms, 30.03 KiB
+/script.js(localhost) - 65 ms, 53.03 KiB
+/content/site-settings.json(localhost) - 109 ms, 2.71 KiB
+/content/contact.json(localhost) - 109 ms, 3.44 KiB
+/content/location.json(localhost) - 109 ms, 0.58 KiB
+/content/faq.json(localhost) - 106 ms, 2.62 KiB
+/content/linux.json(localhost) - 104 ms, 1.52 KiB
+/content/help.json(localhost) - 102 ms, 3.27 KiB
+/content/views.json(localhost) - 100 ms, 1.31 KiB
+/content/about.json(localhost) - 92 ms, 5.63 KiB
+/content/journey.json(localhost) - 90 ms, 3.68 KiB
+/content/projects.json(localhost) - 85 ms, 21.39 KiB
+/style.css(localhost) - 41 ms, 42.84 KiB
+Preconnected origins
+preconnect hints help the browser establish a connection earlier in the page load, saving time when the first request for that origin is made. The following are the origins that the page preconnected to.
+no origins were preconnected
+Preconnect candidates
+Add preconnect hints to your most important origins, but try to use no more than 4.
+No additional origins are good candidates for preconnecting
+Use efficient cache lifetimes Est savings of 13 KiB
+A long cache lifetime can speed up repeat visits to your page. Learn more about caching.FCPLCPUnscored
+Request
+Cache TTL
+Transfer Size
+localhost 1st party
+13 KiB
+/fiveserver.js(localhost)
+None
+13 KiB
+Document request latency Est savings of 20 KiB
+Your first network request is the most important. Reduce its latency by avoiding redirects, ensuring a fast server response, and enabling text compression.FCPLCPUnscored
+Avoids redirects
+Server responds quickly (observed 1 ms)
+No compression applied
+Layout shift culprits
+Layout shifts occur when elements move absent any user interaction. Investigate the causes of layout shifts, such as elements being added, removed, or their fonts changing as the page loads.CLSUnscored
+Element
+Layout shift score
+Total
+0.017
+div#focus-card.focus.card
+0.017
+LCP breakdown
+Each subpart has specific improvement strategies. Ideally, most of the LCP time should be spent on loading the resources, not within delays.LCPUnscored
+Subpart
+Duration
+Time to first byte
+10 ms
+Element render delay
+100 ms
+p#hero-lead.lead
+These insights are also available in the Chrome DevTools Performance Panel - record a trace to view more detailed information.
+Diagnostics
+Minify JavaScript Est savings of 11 KiB
+Minifying JavaScript files can reduce payload sizes and script parse time. Learn how to minify JavaScript.FCPLCPUnscored
+URL
+Transfer Size
+Est Savings
+localhost 1st party
+52.7 KiB 11.5 KiB
+/script.js(localhost)
+52.7 KiB
+11.5 KiB
+Reduce unused CSS Est savings of 18 KiB
+Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. Learn how to reduce unused CSS.FCPLCPUnscored
+URL
+Transfer Size
+Est Savings
+localhost 1st party
+42.5 KiB 18.1 KiB
+/style.css(localhost)
+42.5 KiB
+18.1 KiB
+Page prevented back/forward cache restoration 1 failure reason
+Many navigations are performed by going back to a previous page, or forwards again. The back/forward cache (bfcache) can speed up these return navigations. Learn more about the bfcacheUnscored
+Failure reason
+Failure type
+An iframe on the page started a navigation that did not complete.
+Not actionable
+about:blank
+Minify CSS Est savings of 7 KiB
+Minifying CSS files can reduce network payload sizes. Learn how to minify CSS.FCPLCPUnscored
+URL
+Transfer Size
+Est Savings
+localhost 1st party
+42.8 KiB 6.7 KiB
+/style.css(localhost)
+42.8 KiB
+6.7 KiB
+Avoid non-composited animations 1 animated element found
+Animations which are not composited can be janky and increase CLS. Learn how to avoid non-composited animationsCLSUnscored
+Element
+Name
+path.journey-path-progress
+Unsupported CSS Property: stroke-dashoffset
+stroke-dashoffset
+Avoid long main-thread tasks 2 long tasks found
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. Learn how to avoid long main-thread tasksTBTUnscored
+URL
+Start Time
+Duration
+localhost 1st party
+142 ms
+http://localhost:5500
+753 ms
+90 ms
+/script.js(localhost)
+2,124 ms
+52 ms
+More information about the performance of your application. These numbers don't directly affect the Performance score.
+
+## You:
+
+Okay, now we have a much clearer picture. And you're right: **we made zero changes between those two runs, yet the score went from 95 to 96.**
+
+That's actually useful evidence.
+
+Look at the progression:
+
+| Metric      | Run 1 | Run 2 | Run 3 |
+| ----------- | ----- | ----- | ----- |
+| Performance | 97    | 95    | 96    |
+| LCP         | 2.6 s | 2.9 s | 2.7 s |
+| FCP         | 1.1 s | 1.1 s | 1.1 s |
+| TBT         | 0 ms  | 0 ms  | 0 ms  |
+| CLS         | 0.017 | 0.017 | 0.017 |
+| Speed Index | 1.1 s | 1.1 s | 1.1 s |
+
+The important observation is that **LCP is fluctuating while the other metrics are remarkably stable.**
+
+There's another clue: the latest run's LCP element render delay fell from 120 ms to 100 ms. Its critical network path also fell from 126 ms to 109 ms.
+
+Yet LCP is still 2.7 seconds.
+
+That tells us the delay isn't simply the stylesheet taking longer to download.
+
+### **What's actually happening?**
+
+Lighthouse runs under simulated mobile conditions. Its score is calculated from measured metrics, and LCP is weighted heavily enough that a few hundred milliseconds can move the overall score.
+
+We also have a local development server in the equation. FiveServer, browser scheduling, resource loading, and the simulated network can all introduce variability.
+
+I wouldn't attribute this to our CSS changes without evidence.
+
+### **Here's what I want to establish next**
+
+Rather than keep changing code to chase a fluctuating number, let's establish a baseline.
+
+Run Lighthouse **three more times without changing anything**, using the same device and throttling settings.
+
+Record just these:
+
+- Performance score
+- LCP
+- FCP
+
+We can calculate the average and range.
+
+If LCP consistently sits around 2.6–2.9 seconds, that's our actual working baseline. If it varies more widely, we investigate the measurement environment before touching the application.
+
+**My position:** 95–97 is already excellent. But I don't want to call the optimization finished until we understand what is causing the LCP variation. We should optimize the application, not optimize for a particular Lighthouse run.
+
+## Me:
+
+1. Performance Score: 96, LCP: 2.7s (Only thing not Green, it's Yellow), FCP: 1.1s
+2. Performance Score: 96, LCP: 2.7s (Only thing not Green, it's Yellow), FCP: 1.1s
+3. Performance Score: 95 LCP: 2.9s (Only thing not Green, it's Yellow), FCP: 1.6s
+
+## You:
+
+That's actually a pretty consistent result. We now have five runs showing the same general pattern.
+
+| Run | Performance | LCP   | FCP   |
+| --- | ----------- | ----- | ----- |
+| 1   | 97          | 2.6 s | 1.1 s |
+| 2   | 95          | 2.9 s | 1.1 s |
+| 3   | 96          | 2.7 s | 1.1 s |
+| 4   | 96          | 2.7 s | 1.1 s |
+| 5   | 95          | 2.9 s | 1.6 s |
+
+**The pattern is becoming clear:**
+
+- Four of five runs have FCP at 1.1 seconds.
+- LCP consistently falls between 2.6 and 2.9 seconds.
+- TBT and CLS have remained excellent.
+- The fifth run shows a broader slowdown, with FCP also increasing.
+
+### **What this tells us**
+
+Our working LCP baseline is approximately **2.76 seconds** across these five runs.
+
+That's not a meaningful application regression. It's a relatively narrow measurement range, with occasional slower runs.
+
+However, LCP is still the one metric worth investigating. We shouldn't assume the remaining delay is caused by CSS, JavaScript, or the portrait just because Lighthouse lists those opportunities.
+
+### **My recommendation**
+
+Let's stop chasing the score and investigate the actual LCP element:
+
+`p#hero-lead.lead`
+
+I want to understand when that paragraph becomes visible, what causes it to render, and whether its content depends on the JavaScript/CMS loading sequence.
+
+That gives us a concrete optimization target instead of randomly modifying resources to gain or lose a Lighthouse point.
