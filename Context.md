@@ -19761,3 +19761,84 @@ Minification is straightforward, but we need to preserve the readable source and
 **My recommendation:** Let's tackle responsive portrait delivery first, then CSS. The image is an easy, measurable optimization, and CSS is probably our next meaningful opportunity to improve the initial render.
 
 We don't need to rewrite the portfolio. We need to keep removing the unnecessary work from its critical path.
+
+## Me:
+
+Then let's go in that order I would like this to be online by Monday, ideally tomorrow, but Monday morning at the latest. I want to get back to working on Systenica or Battle Buddy Network
+
+## You:
+
+Agreed. Let's get the portfolio finished and online, then get your attention back where you want it: Systenica or Battle Buddy Network.
+
+I’m treating **tomorrow as the target and Monday morning as the hard deadline**. We’ll stay focused on the work that directly affects launch:
+
+1. **Responsive portrait delivery** — reduce image transfer without sacrificing quality on high-resolution screens.
+2. **CSS delivery** — address render-blocking and unnecessary CSS carefully, without breaking the design or introducing a flash of unstyled content.
+3. **Final Lighthouse pass** — verify the changes and check that accessibility, SEO, and best practices remain intact.
+4. **Launch review** — test the actual portfolio, CMS, content, and contact-form structure. Then we can make the deployment decision.
+
+No redesign, no unnecessary refactoring, and no chasing Lighthouse diagnostics that don't produce a meaningful improvement. We’ll work through the remaining issues in order.
+
+I checked the current `main` source before making the next change. There’s one useful detail: the CMS script updates the portrait's `src` and `alt`, but it doesn't overwrite `srcset`. So we can add responsive image selection without changing the CMS workflow.
+
+### **Step 1 — Create the smaller portrait**
+
+From your portfolio repository directory, run:
+
+```
+python3 - <<'PY'
+from PIL import Image
+from pathlib import Path
+
+source = Image.open("chris.webp").convert("RGBA")
+small = source.resize((192, 192), Image.Resampling.LANCZOS)
+small.save("chris-192.webp", "WEBP", quality=90, method=6, exact=True)
+
+for name in ("chris.webp", "chris-192.webp"):
+    path = Path(name)
+    print(f"{name}: {path.stat().st_size / 1024:.1f} KiB")
+PY
+```
+
+This creates a 192×192 version while preserving transparency. The existing 384×384 image stays in place for higher-density displays.
+
+Then open `chris-192.webp` and compare it with `chris.webp` at the size used on the portfolio. If the quality holds up, commit and push the new file:
+
+```
+git add chris-192.webp
+git commit -m "Add responsive portrait image"
+git push origin main
+```
+
+**Once you've pushed it, tell me.** I'll update the image markup on GitHub to use both sizes, then we'll move directly to CSS delivery. No deployment until the final review.
+
+## Me:
+
+I've pushed it
+
+## You:
+
+Good. GitHub confirms `chris-192.webp` is on `main`, and I've updated `index.html` to offer both portrait sizes:
+
+- **192px version:** selected on standard-density displays.
+- **384px version:** available for higher-density displays.
+- `sizes="196px"` matches the portrait's CSS display width.
+
+The CMS can continue updating the image source without removing the responsive candidates.
+
+Now pull the change locally:
+
+```
+git pull origin main
+```
+
+Then run Lighthouse again under the same conditions as the previous tests.
+
+I'm particularly interested in:
+
+1. **Image delivery:** Did the estimated savings for `chris.webp` decrease?
+2. **LCP:** Did it improve beyond 2.9 seconds?
+3. **CLS:** Did it remain at 0.017?
+4. **Performance score:** What did Lighthouse report?
+
+Send me those results. Then we'll tackle CSS delivery—the next item in our agreed order.
