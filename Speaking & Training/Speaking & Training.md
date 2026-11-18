@@ -196,33 +196,37 @@ The actual monthly retainer is established during scoping based on:
 
 ### 3.3 Audience Size
 
-The standard training retainer includes audiences of up to 25 attendees.
+The standard monthly training retainer includes up to 25 participants.
 
-For every additional group of up to five attendees, a $500 surcharge applies.
+For every additional group of up to five participants beyond the initial 25, a $500 audience-size surcharge applies.
 
 Attendance is rounded up to the next group of five. Any attendance above 25 triggers the applicable surcharge.
 
-| Attendance | Additional Charge |
-| ---------- | ----------------: |
-| 1–25       |                $0 |
-| 26–30      |              $500 |
-| 31–35      |            $1,000 |
-| 36–40      |            $1,500 |
-| 41–45      |            $2,000 |
-| 46–50      |            $2,500 |
-| 51–55      |            $3,000 |
+The audience-size surcharge is calculated independently for each billing month using the actual number of participants covered by that month's training engagement.
 
-Examples:
+The surcharge is not a permanent adjustment to the client's base monthly retainer. If the participant count increases or decreases, the audience-size surcharge changes accordingly for that month.
 
-- 25 attendees: No additional charge.
-- 26 attendees: $500 additional charge.
-- 27 attendees: $500 additional charge.
-- 30 attendees: $500 additional charge.
-- 31 attendees: $1,000 additional charge.
+| Attendance | Monthly Additional Charge |
+| ---------- | ------------------------: |
+| 1–25       |                        $0 |
+| 26–30      |                      $500 |
+| 31–35      |                    $1,000 |
+| 36–40      |                    $1,500 |
+| 41–45      |                    $2,000 |
+| 46–50      |                    $2,500 |
+| 51–55      |                    $3,000 |
+
+**Example of Monthly Audience Adjustments:**
+
+A client has an ongoing monthly training engagement. The participant count changes over three consecutive months:
+
+- March: 25 participants — No additional charge.
+- April: 27 participants — $500 additional charge.
+- May: 24 participants — No additional charge.
+
+The monthly training arrangement continues unchanged. Only the audience-size component of the applicable month's price changes.
 
 There are no exceptions for attendance that exceeds a threshold by only one or two people.
-
-The applicable audience-size surcharge must be included in the agreed monthly retainer pricing.
 
 ### 3.4 Session Frequency and Scope
 
@@ -414,7 +418,9 @@ Apply the relevant pricing rules in the following order:
 
 1. Establish the engagement type and applicable base price.
 2. Apply the keynote minimum when applicable.
-3. Apply the audience-size surcharge.
+3. Apply the applicable audience-size pricing:
+   - **Speaking engagements:** Calculate the audience-size surcharge using the expected attendance for that engagement.
+   - **Training engagements:** Calculate the audience-size surcharge using the actual participant count for the applicable billing month. Recalculate this amount for each subsequent billing month based on that month's participant count.
 4. Apply any applicable additional-duration charge for non-keynote speaking.
 5. Apply exclusivity premiums when applicable.
 6. Establish the training retainer amount and scope, when applicable.
@@ -510,11 +516,13 @@ Additional speaking charges:
 
 Additional training charges:
 
-| Adjustment                                           | Additional Charge |
-| ---------------------------------------------------- | ----------------: |
-| Each additional group of up to 5 attendees beyond 25 |              $500 |
-| Local exclusivity                                    |    $1,000 minimum |
-| National exclusivity                                 |    $3,000 minimum |
+| Adjustment                                              |      Additional Charge |
+| ------------------------------------------------------- | ---------------------: |
+| Each additional group of up to 5 participants beyond 25 | $500 per billing month |
+| Local exclusivity                                       |         $1,000 minimum |
+| National exclusivity                                    |         $3,000 minimum |
+
+The audience-size surcharge is recalculated each billing month using the actual participant count for that month. It is not a permanent adjustment to the monthly retainer. | $3,000 minimum |
 
 Training retainer discounts:
 
