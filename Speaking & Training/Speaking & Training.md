@@ -2,220 +2,556 @@
 
 ## Standard Operating Procedure
 
-## Pricing Logic | Decision Rules | Booking Flow
+### Pricing Logic | Decision Rules | Booking Flow
 
-## Purpose
+---
 
-This SOP defines pricing floors, engagement rules, and the inquiry-to-booking process for all Lumetis
-speaking and training engagements. It eliminates ambiguity, protects floor rates, and ensures every
-inquiry moves through a consistent decision path.
+## 1. Purpose
 
-The floor is the floor. Nothing in this document creates room to negotiate below it without a defined
-exception.
+This document establishes the standard pricing, engagement requirements, and booking procedures for Lumetis speaking and training services.
 
-## Section 1: Speaking Engagements (Keynote / Panel)
+Its purpose is to:
 
-### 1.1 — Offer Definition
+- Establish consistent pricing floors.
+- Define how pricing adjustments are calculated.
+- Establish clear engagement boundaries.
+- Protect the value of preparation, research, and delivery.
+- Create a repeatable process for handling inquiries and confirming engagements.
 
-Speaking engagements are keynotes or panel appearances. This is not a workshop. Research,
-preparation, and delivery are included in the pricing. The client does not pay separately for prep time — it
-is built into the rate.
+Pricing decisions should be consistent, documented, and based on the rules established here.
 
-### 1.2 (Base Rate by Format & Location)
+**The floor is the floor.**
 
-Travel is included in all in-person rates. There are no separate travel invoices unless a specific exception
-is negotiated in advance.
+---
 
-### Engagement Type Format/Scope Floor Price
+## 2. Speaking Engagements
 
-- Virtual Any location $2,000
-- In-Person — Local Same city / metro area $3,500
-- In-Person — In-State Same state, requires travel $5,000
-- In-Person — Cross-State Requires crossing state lines $8,000
+### 2.1 Engagement Types
 
-### 1.3 — Virtual Alternative Rule
+Speaking engagements include:
 
-- When an in-person engagement requires travel (in-state or cross-state), a virtual alternative may be
-  offered at $1,000 less than the corresponding in-person rate.
-- In-State — Virtual Alt $4,000 floor
-- Cross-State — Virtual Alt $7,000 floor
+- Keynote presentations.
+- Panel appearances.
+- Other agreed speaking engagements.
 
-**_NOTE:_** The virtual alternative is an option, not a default. It must be proposed by Lumetis or requested by the
-client — it does not reduce the in-person rate.
+Speaking engagements do not include workshops or full-day training programs.
 
-### 1.4 — Duration Rules
+Research, preparation, and delivery are included in the engagement price.
 
-Duration is a factor in pricing. The following rules apply to all engagements:
+### 2.2 Base Pricing
 
-- Preferred Duration 2 hours or less
-- Maximum Duration 4 hours — hard limit
-- 45-Minute Keynote Floor $5,000 minimum — research-intensive, applies regardless of
-  location
+Speaking engagement pricing is determined by the engagement format and geographic location.
 
-**_NOTE_**
+| Engagement Type                       | Base Price |
+| ------------------------------------- | ---------: |
+| Virtual — Any Location                |     $2,000 |
+| In-Person — Local                     |     $3,500 |
+| In-Person — In-State Requiring Travel |     $5,000 |
+| In-Person — Cross-State               |     $8,000 |
 
-- A 45-minute keynote requires significantly more preparation than a shorter talk. The $5,000 floor is
-  non-negotiable and overrides the base location rate when higher.
-- No full-day workshops. If a client requests this, the answer is no.
+#### Geographic Definitions
 
-### 1.5 — Audience Size
+Geographic pricing is determined relative to the consultant's location.
 
-- The floor pricing applies regardless of audience size for standard engagements. If an event exceeds
-  20–30 attendees, pricing is subject to revision. This exists to protect the quality of the experience — not to
-  increase revenue for its own sake.
-- Standard Audience Floor pricing applies — no adjustment
-- 20–30+ Attendees Pricing revision required before confirming engagement
+- **Local:** Within the same city or county as the consultant.
+- **In-State:** Within the same state as the consultant, outside the local area.
+- **Cross-State:** Any location outside the consultant's state.
 
-### 1.6 — Exclusivity Premium
+The applicable geographic category determines the in-person base rate.
 
-- If the client requests that Lumetis not speak to competitors within a defined period, an exclusivity premium
-  applies on top of the base rate.
-- Local Exclusivity +$1,000 minimum
-- National Exclusivity +$3,000 minimum
+#### Virtual Alternatives
 
-**_NOTE:_** Exclusivity terms, scope, and duration must be agreed in writing before the engagement is confirmed.
+When an engagement would otherwise require travel, a virtual alternative may be offered.
 
-## Section 2: Training Engagements (Workshop / Program)
+The virtual alternative is priced at $1,000 less than the corresponding in-person rate.
 
-### 2.1 — Offer Definition
+| Engagement Location | In-Person Rate | Virtual Alternative |
+| ------------------- | -------------: | ------------------: |
+| In-State            |         $5,000 |              $4,000 |
+| Cross-State         |         $8,000 |              $7,000 |
 
-- Training engagements are retainer-style sessions delivered to an organization or team. The structure and
-  content depend entirely on what the client needs. There is no standard format — the engagement is scoped after the initial call.
-- Training is not a keynote. It is ongoing, practical, and built around a defined outcome for the client's team.
+Virtual alternatives may be proposed by Lumetis or requested by the client.
 
-### 2.2 — Pricing Structure
+Offering a virtual alternative does not reduce or change the applicable in-person rate.
 
-- Training is priced on a monthly retainer basis. The base rate is set per engagement during the scoping
-  call, based on session frequency, content complexity, and audience type.
-- Base Floor $3,500/month — in-person engagements
-- Virtual Base Floor $2,000/month minimum
-- Month-to-Month No discount applied — full base rate
-- 6-Month Retainer $500/month discount applied to agreed base rate
-- 12-Month Retainer $500/month discount applied — same rule as 6-month+
+### 2.3 Speaking Duration
 
-### 2.3 — What Affects Training Pricing
+The standard speaking engagement price includes up to and including four hours of speaking per day.
 
-The following are legitimate factors in scoping a training rate. They may increase the base but do not
-reduce it below the floor:
+For non-keynote speaking engagements:
 
-- Session frequency (weekly vs. bi-weekly vs. monthly)
-- Content development required from scratch vs. existing frameworks
-- Number of participants — same 20-30+ rule applies
-- Industry-specific research required
-- Exclusivity (same premium structure as speaking applies)
+- Up to four hours per day: Included in the base price.
+- Beyond four hours per day: An additional $1,000 for every 30-minute increment or portion thereof.
 
-### 2.4 — Duration Rules
+Additional time is rounded up to the next 30-minute increment. Partial increments are charged in full.
 
-- Same rules as speaking apply to training sessions:
-- Preferred Session Length 2 hours or less
-- Maximum Session Length 4 hours — hard limit
+Examples:
 
-**_NOTE:_** No full-day training sessions. If a client needs more than 4 hours, that becomes multiple sessions — not
-one extended block.
+| Speaking Duration             | Additional Charge |
+| ----------------------------- | ----------------: |
+| 4 hours                       |                $0 |
+| 4 hours, 2 minutes            |            $1,000 |
+| 4 hours, 30 minutes           |            $1,000 |
+| 4 hours, 30 minutes, 1 second |            $2,000 |
+| 5 hours                       |            $2,000 |
+| 5 hours, 15 minutes           |            $3,000 |
 
-## Section 3: Exception Logic
+The additional-duration charge applies independently to each day of a multi-day engagement.
 
-### 3.1 — What Is and Is Not an Exception
+The four-hour allowance is not a reason to change the base price. The additional charge only applies when speaking time exceeds four hours per day.
 
-An exception is not a discount. It is a structured adjustment based on a defined factor. The following do
-not qualify as exceptions:
+### 2.4 Keynote Pricing
 
-- Budget constraints
-- Audience size being smaller than expected
-- The client being a nonprofit or early-stage business
-- Repeat clients without a defined retainer
+Keynote engagements have a minimum fee of $5,000, regardless of location.
 
-**_NOTE:_** The floor exists regardless of who is asking. If Lumetis chooses to make an exception, it must be
-documented and approved before the engagement is confirmed.
+This minimum applies even when the keynote is shorter than the standard speaking engagement duration.
 
-### 3.2 — Factors That May Justify Adjustment
+For example, a 45-minute keynote has a minimum fee of $5,000, even if the applicable geographic base rate is lower.
 
-The following may be considered when pricing flexibility is relevant:
+The keynote minimum overrides the standard base rate when the keynote minimum is higher.
 
-- Multi-engagement deal (speaking + training) — can be structured as a package with total value
-  preserved
-- Long-term retainer commitment (6+ months) — discount applies per the retainer rule only
-- Strategic relationship value — assessed case by case, not offered by default
+### 2.5 Audience Size
 
-**_NOTE:_** If it is not in this SOP, it requires a decision before a number is
-given to the client.
+The standard speaking engagement base price includes audiences of up to 25 attendees.
 
-## Section 4: Inquiry to Booking Flow
+For every additional group of up to five attendees, a $500 surcharge applies.
 
-Every inquiry follows this path. No pricing is confirmed before Step 3 is complete.
+Attendance is rounded up to the next group of five. Any attendance above 25 triggers the applicable surcharge.
 
-## Inquiry Received
+| Attendance | Additional Charge |
+| ---------- | ----------------: |
+| 1–25       |                $0 |
+| 26–30      |              $500 |
+| 31–35      |            $1,000 |
+| 36–40      |            $1,500 |
+| 41–45      |            $2,000 |
+| 46–50      |            $2,500 |
+| 51–55      |            $3,000 |
 
-Log the inquiry. Capture: name, organization, event type (speaking or training), date, location
-(virtual or in-person), estimated audience size, and any notes on scope or topic.
+Examples:
 
-## Initial Qualification
+- 25 attendees: No additional charge.
+- 26 attendees: $500 additional charge.
+- 27 attendees: $500 additional charge.
+- 30 attendees: $500 additional charge.
+- 31 attendees: $1,000 additional charge.
 
-Determine: Is this speaking or training? What is the location type? What duration are they
-expecting? Is there an exclusivity requirement? If audience is 20-30+, flag for pricing revision.
+There are no exceptions for attendance that exceeds a threshold by only one or two people.
 
-## Scoping Call
+### 2.6 Exclusivity
 
-30-minute call to confirm scope, content needs, and logistics. Do not provide a number before this
-call unless the inquiry is entirely self-explanatory and fits cleanly within defined rates.
+Exclusivity requirements carry an additional fee on top of the applicable engagement price.
 
-## Price Calculation
+Minimum exclusivity premiums:
 
-Apply this SOP. Base rate by format and location → duration adjustment → audience size check
-→ exclusivity premium if applicable → retainer discount if applicable. Document the calculation.
+- **Local exclusivity:** Additional $1,000.
+- **National exclusivity:** Additional $3,000.
 
-## Proposal Sent
+Exclusivity requirements must be defined in writing.
 
-Send written proposal with the confirmed rate, engagement scope, dates, and any exclusivity or
-retainer terms. Do not negotiate on the call — send it in writing.
+The agreement must specify:
 
-## Signed & Confirmed
+- What exclusivity covers.
+- The applicable industry, organization, or subject area.
+- Geographic restrictions.
+- Duration of exclusivity.
+- Any other limitations or obligations.
 
-Engagement is confirmed only when the agreement is signed and deposit is received. No date is
-held without both.
+Exclusivity is not assumed or included in standard speaking engagement pricing.
 
-## Delivery & Post-Engagement
+---
 
-Deliver the engagement. For training retainers, log session notes and confirm next session. For
-speaking, request a testimonial or referral within 5 business days of the event.
+## 3. Training Engagements
 
-## Section 5: Quick Reference — Pricing Summary
+### 3.1 Engagement Structure
 
-### Speaking Floors
+Training engagements are structured as monthly retainers.
 
-## Engagement Type Format/Scope Floor Price
+Training is designed for organizations and teams that need practical, relevant instruction based on their business, operations, and objectives.
 
-| Type        | Format                      | Price                      |
-| ----------- | --------------------------- | -------------------------- |
-| Any         | Virtual                     | $2,000                     |
-| Local       | In-Person (Travel Included) | $3,500                     |
-| In-State    | In-Person (Travel Included) | $5,000                     |
-| Cross-State | In-Person (Travel Included) | $8,000                     |
-| (Alt)       | Virtual (In-State)          | $1,000 less than in-person |
-| (Alt)       | Virtual (Cross State)       | $1,000 less than in person |
+There is no universal training format.
 
-**_NOTE:_** 45-Min Keynote Overrides location rate when higher $5,000
+Content, session structure, and frequency are established during the initial scoping process.
 
-## Engagement Type Format / Scope Floor Price
+Training should be practical, outcome-oriented, and tailored to the client's needs.
 
-- Exclusivity — Local Added to base rate +$1,000
-- Exclusivity — National Added to base rate +$3,000
+### 3.2 Training Pricing Floors
 
-## Training Floors
+| Training Format    | Minimum Monthly Retainer |
+| ------------------ | -----------------------: |
+| In-Person Training |                   $3,500 |
+| Virtual Training   |                   $2,000 |
 
-## Engagement Type Format / Scope Floor Price
+These are minimum monthly pricing floors.
 
-- Virtual Retainer Monthly base $2,000/mo
-- In-Person Retainer Monthly base $3,500/mo
-- 6-Month Retainer Discount applied to base −$500/mo
-- Audience 20-30+ Pricing revision required TBD
+The actual monthly retainer is established during scoping based on:
 
-## Non-Negotiables
+- Session frequency.
+- Content development requirements.
+- Audience size.
+- Participant type and experience.
+- Industry research requirements.
+- Exclusivity requirements.
+- Overall complexity and preparation requirements.
 
-- The floor is the floor. No engagement is confirmed below it without a documented exception.
-- No date is held without a signed agreement and deposit.
-- No pricing is given before the scoping call unless the engagement is entirely self-contained.
-- Audience size over 20–30 always triggers a pricing review — it is not optional.
-- All exceptions must be documented before the client receives a number.
+### 3.3 Audience Size
 
-## Lumetis — Internal Use Only
+The standard training retainer includes audiences of up to 25 attendees.
+
+For every additional group of up to five attendees, a $500 surcharge applies.
+
+Attendance is rounded up to the next group of five. Any attendance above 25 triggers the applicable surcharge.
+
+| Attendance | Additional Charge |
+| ---------- | ----------------: |
+| 1–25       |                $0 |
+| 26–30      |              $500 |
+| 31–35      |            $1,000 |
+| 36–40      |            $1,500 |
+| 41–45      |            $2,000 |
+| 46–50      |            $2,500 |
+| 51–55      |            $3,000 |
+
+Examples:
+
+- 25 attendees: No additional charge.
+- 26 attendees: $500 additional charge.
+- 27 attendees: $500 additional charge.
+- 30 attendees: $500 additional charge.
+- 31 attendees: $1,000 additional charge.
+
+There are no exceptions for attendance that exceeds a threshold by only one or two people.
+
+The applicable audience-size surcharge must be included in the agreed monthly retainer pricing.
+
+### 3.4 Session Frequency and Scope
+
+Training frequency and scope are established during the scoping process.
+
+Possible arrangements include:
+
+- Weekly sessions.
+- Biweekly sessions.
+- Monthly sessions.
+
+The agreement must define:
+
+- Number of sessions per month.
+- Expected session duration.
+- Training topics and objectives.
+- Content development responsibilities.
+- Participant audience.
+- Any additional research or preparation requirements.
+
+Changes to the agreed frequency, content, audience, or scope may require a revised retainer.
+
+### 3.5 Training Duration
+
+Training sessions should remain focused and practical.
+
+- Preferred session duration: Two hours or less.
+- Maximum session duration: Four hours per day.
+- Full-day training sessions are not offered.
+- Longer training requirements should be divided into multiple sessions.
+
+The speaking-duration surcharge does not automatically apply to training sessions. Training pricing is based on the agreed monthly retainer scope and frequency.
+
+### 3.6 Monthly Retainer Discounts
+
+Monthly training retainers receive a $200 discount for each month included in a qualifying commitment.
+
+The discount is applied to the normal monthly retainer price.
+
+| Commitment     | Monthly Discount | Total Discount |
+| -------------- | ---------------: | -------------: |
+| Month-to-Month |               $0 |             $0 |
+| 6 Months       |             $200 |         $1,200 |
+| 12 Months      |             $200 |         $2,400 |
+
+Examples using a normal monthly retainer of $3,500:
+
+**Month-to-Month**
+
+- Monthly price: $3,500.
+- No discount.
+
+**Six-Month Commitment**
+
+- Normal monthly price: $3,500.
+- Discount: $200 per month.
+- Adjusted monthly price: $3,300.
+- Total commitment: $19,800.
+- Total discount: $1,200.
+
+**Twelve-Month Commitment**
+
+- Normal monthly price: $3,500.
+- Discount: $200 per month.
+- Adjusted monthly price: $3,300.
+- Total commitment: $39,600.
+- Total discount: $2,400.
+
+The discount applies only to qualifying monthly training retainers.
+
+It does not automatically apply to speaking engagements, separately scoped projects, or additional services.
+
+Month-to-month arrangements receive no commitment discount.
+
+### 3.7 Training Exclusivity
+
+Training exclusivity carries an additional fee.
+
+Minimum exclusivity premiums:
+
+- Local exclusivity: Additional $1,000.
+- National exclusivity: Additional $3,000.
+
+Exclusivity requirements must be defined in writing, including scope, geography, industry, and duration.
+
+---
+
+## 4. Exceptions and Special Considerations
+
+### 4.1 Situations That Do Not Automatically Justify Exceptions
+
+The following circumstances do not independently justify reducing the established pricing floors:
+
+- Client budget constraints.
+- Smaller audience sizes.
+- Nonprofit status.
+- Early-stage business status.
+- Repeat clients without an established retainer agreement.
+
+The established pricing structure applies consistently.
+
+### 4.2 Multi-Engagement Opportunities
+
+Multiple speaking and training engagements may be packaged together when doing so creates value for both parties.
+
+However:
+
+- The combined package must preserve the overall value of the services.
+- Any applicable training retainer discount follows the established commitment rules.
+- Speaking engagement pricing does not automatically receive a discount because it is packaged with training.
+- Scope, deliverables, and pricing must be documented.
+
+### 4.3 Strategic Relationships
+
+Strategic relationship opportunities may be evaluated individually.
+
+Any deviation from the standard pricing structure must have a clear business justification.
+
+The decision must be made before the engagement is quoted or confirmed.
+
+### 4.4 Approval and Documentation
+
+Any exception to this SOP requires approval before the engagement is confirmed.
+
+All exceptions must be documented, including:
+
+- The standard price.
+- The proposed exception.
+- The reason for the exception.
+- The business justification.
+- The approved final price.
+- The person authorizing the exception.
+
+Anything not explicitly covered by this SOP requires a decision before quoting.
+
+---
+
+## 5. Inquiry-to-Booking Process
+
+All speaking and training inquiries follow a consistent process.
+
+### Step 1: Log the Inquiry
+
+Record the following information:
+
+- Contact name.
+- Organization.
+- Contact information.
+- Event or training type.
+- Requested date or dates.
+- Engagement location.
+- Virtual or in-person preference.
+- Expected audience size.
+- Requested duration.
+- Topic or subject matter.
+- Additional scope notes.
+
+### Step 2: Qualify the Engagement
+
+Determine:
+
+- Whether the request is for speaking or training.
+- Whether it is a keynote, panel, or other speaking engagement.
+- Whether the engagement is local, in-state, or cross-state.
+- Whether travel is required.
+- Whether the audience exceeds 25 attendees.
+- Whether the requested duration exceeds the standard allowance.
+- Whether exclusivity is requested.
+- Whether the request fits the established service structure.
+
+### Step 3: Schedule a Scoping Call
+
+Schedule a 30-minute scoping call to establish:
+
+- Engagement objectives.
+- Expected outcomes.
+- Content requirements.
+- Audience composition.
+- Logistics.
+- Scope and duration.
+- Frequency, where training is involved.
+- Any additional requirements.
+
+Do not issue a quote before the scoping call unless the request is self-explanatory and clearly fits the established pricing structure.
+
+### Step 4: Calculate Pricing
+
+Apply the relevant pricing rules in the following order:
+
+1. Establish the engagement type and applicable base price.
+2. Apply the keynote minimum when applicable.
+3. Apply the audience-size surcharge.
+4. Apply any applicable additional-duration charge for non-keynote speaking.
+5. Apply exclusivity premiums when applicable.
+6. Establish the training retainer amount and scope, when applicable.
+7. Apply qualifying training retainer discounts.
+
+Document the pricing calculation before issuing the proposal.
+
+### Step 5: Prepare the Written Proposal
+
+The proposal must include:
+
+- Engagement type.
+- Scope of services.
+- Objectives and expected outcomes.
+- Date or dates.
+- Location or delivery format.
+- Duration.
+- Audience size.
+- Pricing breakdown.
+- Applicable surcharges.
+- Exclusivity terms, when applicable.
+- Payment terms.
+- Cancellation or rescheduling terms.
+- Any other relevant conditions.
+
+Pricing is presented in writing.
+
+Do not negotiate pricing during the scoping call.
+
+### Step 6: Confirm the Engagement
+
+An engagement is not confirmed until both conditions are met:
+
+1. The agreement has been signed.
+2. The required deposit has been received.
+
+A date is not held or reserved before both conditions are satisfied.
+
+### Step 7: Deliver the Engagement
+
+Deliver the agreed speaking or training services according to the signed agreement.
+
+For training engagements:
+
+- Maintain notes on completed sessions.
+- Track progress against agreed objectives.
+- Document topics covered.
+- Record relevant follow-up requirements.
+- Prepare for subsequent sessions.
+
+For speaking engagements:
+
+- Deliver the agreed presentation or appearance.
+- Confirm any outstanding obligations.
+- Request a testimonial or referral within five business days of the engagement.
+
+---
+
+## 6. Quick Pricing Reference
+
+### Speaking Engagements
+
+| Engagement             | Base Price |
+| ---------------------- | ---------: |
+| Virtual — Any Location |     $2,000 |
+| Local In-Person        |     $3,500 |
+| In-State In-Person     |     $5,000 |
+| Cross-State In-Person  |     $8,000 |
+| Keynote Minimum        |     $5,000 |
+
+Virtual alternatives for travel engagements:
+
+| Engagement  | Virtual Price |
+| ----------- | ------------: |
+| In-State    |        $4,000 |
+| Cross-State |        $7,000 |
+
+Additional speaking charges:
+
+| Adjustment                                                                                    | Additional Charge |
+| --------------------------------------------------------------------------------------------- | ----------------: |
+| Each additional group of up to 5 attendees beyond 25                                          |              $500 |
+| Each additional 30 minutes or portion thereof beyond 4 hours per day for non-keynote speaking |            $1,000 |
+| Local exclusivity                                                                             |    $1,000 minimum |
+| National exclusivity                                                                          |    $3,000 minimum |
+
+### Training Engagements
+
+| Training Format | Monthly Floor |
+| --------------- | ------------: |
+| Virtual         |        $2,000 |
+| In-Person       |        $3,500 |
+
+Additional training charges:
+
+| Adjustment                                           | Additional Charge |
+| ---------------------------------------------------- | ----------------: |
+| Each additional group of up to 5 attendees beyond 25 |              $500 |
+| Local exclusivity                                    |    $1,000 minimum |
+| National exclusivity                                 |    $3,000 minimum |
+
+Training retainer discounts:
+
+| Commitment     | Monthly Discount |
+| -------------- | ---------------: |
+| Month-to-Month |               $0 |
+| 6 Months       |             $200 |
+| 12 Months      |             $200 |
+
+### Non-Negotiable Rules
+
+1. Pricing floors are minimums, not opening negotiation positions.
+2. Audiences of up to 25 attendees are included in the standard price.
+3. Every additional group of up to five attendees incurs a $500 surcharge.
+4. Audience-size thresholds are rounded up, never down.
+5. Non-keynote speaking engagements include up to four hours per day.
+6. Every additional 30-minute increment or portion thereof beyond four hours incurs a $1,000 charge.
+7. Keynote engagements have a $5,000 minimum.
+8. Training sessions are limited to four hours per day.
+9. Month-to-month training retainers receive no discount.
+10. Qualifying six- and twelve-month training commitments receive $200 off per month.
+11. Exclusivity is priced separately and documented in writing.
+12. No engagement is confirmed until the agreement is signed and the required deposit is received.
+13. Exceptions must be approved and documented before confirmation.
+
+---
+
+## 7. Operating Principle
+
+Speaking and training engagements are professional services with defined value, scope, and pricing.
+
+The pricing structure exists to protect the value of preparation, research, delivery, and ongoing client commitments.
+
+Every inquiry should be evaluated consistently.
+
+Every proposal should reflect the actual scope of work.
+
+Every engagement should be confirmed in writing.
+
+**The floor is the floor.**
